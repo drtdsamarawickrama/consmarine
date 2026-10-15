@@ -1,0 +1,8 @@
+/* Keep the original site style; only control entrance motion accessibility. */
+@media (prefers-reduced-motion: reduce) {
+  .cmcs-reveal-motion {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

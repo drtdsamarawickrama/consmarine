@@ -1,0 +1,249 @@
+/* Self-contained CMCS cinematic hero styling.
+   These essential styles do not depend on Tailwind's class scanner. */
+.cmcs3d-hero,
+.cmcs3d-hero * { box-sizing: border-box; }
+
+.cmcs3d-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 740px;
+  width: 100%;
+  background: #04182b;
+  color: #fff;
+  font-family: var(--font-inter), Arial, sans-serif;
+}
+.cmcs3d-photo-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.cmcs3d-photo {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: #04182b;
+  pointer-events: none;
+  transition: opacity 1.35s ease-in-out;
+  will-change: opacity;
+}
+.cmcs3d-photo.is-active { opacity: 1; z-index: 1; }
+.cmcs3d-photo:not(.is-active) { z-index: 0; }
+.cmcs3d-photo-image {
+  object-fit: cover;
+  object-position: 50% 48%;
+  animation: cmcs3d-slow-ocean-zoom 28s ease-in-out infinite alternate;
+}
+.cmcs3d-slide-copy-content { animation: cmcs3d-content-appear 0.85s ease-out both; }
+@keyframes cmcs3d-content-appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes cmcs3d-slow-ocean-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.045); }
+}
+.cmcs3d-shade, .cmcs3d-bottom-darkening, .cmcs3d-sunset-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.cmcs3d-shade {
+  background: linear-gradient(90deg,
+    rgba(4,24,43,.97) 0%,
+    rgba(5,32,54,.90) 23%,
+    rgba(11,48,75,.75) 42%,
+    rgba(11,48,75,.32) 60%,
+    rgba(4,24,43,.20) 77%,
+    rgba(4,24,43,.45) 100%);
+}
+.cmcs3d-bottom-darkening {
+  z-index: 3;
+  background: linear-gradient(0deg,rgba(4,24,43,.85),transparent 30%, transparent 75%,rgba(4,24,43,.2));
+}
+.cmcs3d-sunset-glow {
+  z-index: 3;
+  background: radial-gradient(circle at 92% 9%, rgba(213,172,115,.18), transparent 32%);
+  mix-blend-mode: screen;
+}
+.cmcs3d-shell {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1580px;
+  margin: 0 auto;
+  padding: 72px 68px 33px;
+}
+.cmcs3d-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 262px;
+  align-items: center;
+  gap: 44px;
+  min-height: 545px;
+}
+.cmcs3d-copy { max-width: 870px; min-width: 0; }
+.cmcs3d-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .265em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: #7ee3ff;
+  margin: 0 0 30px;
+}
+.cmcs3d-eyebrow > span { width: 40px; flex-shrink: 0; height: 2px; background: #49c5e5; }
+.cmcs3d-headline {
+  margin: 0;
+  max-width: 880px;
+  font-size: clamp(43px, 3.9vw, 67px);
+  font-weight: 800;
+  font-family: var(--font-manrope), var(--font-inter), Arial, sans-serif;
+  line-height: 1.11;
+  letter-spacing: -.042em;
+  color: #fff;
+  text-wrap: balance;
+  text-shadow: 0 2px 16px rgba(0,15,28,.08);
+}
+.cmcs3d-title-line { display: block; white-space: nowrap; }
+.cmcs3d-description {
+  margin: 26px 0 0;
+  max-width: 610px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #e8f5ff;
+  text-shadow: 0 2px 16px rgba(0,19,35,.35);
+}
+.cmcs3d-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 30px; }
+.cmcs3d-button {
+  min-height: 54px;
+  display: inline-flex;
+  gap: 17px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 25px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: background-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.cmcs3d-button svg { flex-shrink: 0; transition: transform .25s ease; }
+.cmcs3d-button:hover { transform: translateY(-3px); }
+.cmcs3d-button:hover svg { transform: translate(3px,-2px); }
+.cmcs3d-button--primary { background:#fff; border:1px solid #fff; color:#04182b; box-shadow: 0 12px 30px rgba(1,17,36,.25); }
+.cmcs3d-button--primary:hover { background:#d4f4ff; }
+.cmcs3d-button--outline { background: rgba(11,48,75,.45); border: 1px solid rgba(73,197,229,.5); color:#fff; backdrop-filter:blur(10px); }
+.cmcs3d-button--outline:hover { background:rgba(73,197,229,.22); border-color:#49c5e5; }
+.cmcs3d-progress { display:flex; align-items:center; gap:25px; margin-top:42px; }
+.cmcs3d-progress-count { font-size:15px; font-weight:700; letter-spacing:.03em; font-variant-numeric:tabular-nums; color:#7ee3ff; }
+.cmcs3d-progress-track { display:flex; width:160px; height:3px; gap:3px; }
+.cmcs3d-progress-segment { height:3px; background:rgba(237,249,255,.3); flex:1; border:0; padding:0; border-radius:4px; cursor:pointer; transition:background-color .3s; }
+.cmcs3d-progress-segment.is-current { background:#49c5e5; box-shadow:0 0 10px rgba(73,197,229,.9); }
+.cmcs3d-credentials { display:flex; flex-direction:column; gap:12px; }
+.cmcs3d-credential {
+  display:flex; gap:15px; align-items:center; min-height:91px;
+  border:1px solid rgba(73,197,229,.28);
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(11,48,75,.7),rgba(4,24,43,.85));
+  padding:16px 18px;
+  backdrop-filter:blur(16px);
+  box-shadow:0 14px 28px rgba(0,10,24,.4), inset 0 1px rgba(255,255,255,.1);
+  animation:cmcs3d-float 7.5s ease-in-out infinite;
+}
+.cmcs3d-credential-icon { display:grid; flex:0 0 38px; place-items:center; color:#49c5e5; }
+.cmcs3d-credential strong { display:block; font-size:23px; line-height:1.05; color:#fff; font-weight:800; letter-spacing:-.02em; }
+.cmcs3d-credential span { display:block; margin-top:7px; font-size:12px; color:#b8ccd7; line-height:1.25; }
+.cmcs3d-trust {
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr));
+  width:100%; margin-top:27px;
+  padding:16px 18px;
+  border:1px solid rgba(73,197,229,.25);
+  border-radius:18px;
+  background:linear-gradient(90deg,rgba(4,24,43,.92),rgba(11,48,75,.85));
+  box-shadow:0 16px 37px rgba(0,10,24,.5),inset 0 1px rgba(255,255,255,.1);
+  backdrop-filter:blur(18px);
+}
+.cmcs3d-trust-item { min-width:0; display:flex; align-items:center; gap:17px; padding:6px 20px; }
+.cmcs3d-trust-item + .cmcs3d-trust-item { border-left:1px solid rgba(224,248,255,.29); }
+.cmcs3d-trust-item svg { flex-shrink:0; color:#f1fbff; }
+.cmcs3d-trust-item strong { display:block; color:white; font-size:14px; font-weight:750; line-height:1.35; }
+.cmcs3d-trust-item span { display:block; color:#d9eaf7; font-size:12px; margin-top:4px; line-height:1.4; }
+.cmcs3d-route-map { position:absolute; z-index:4; pointer-events:none; width:56%; height:auto; top:2%; left:36%; opacity:.6; }
+.cmcs3d-route-line { animation:cmcs3d-route-travel 24s linear infinite; }
+.cmcs3d-route-line--second { animation-duration:31s; }
+.cmcs3d-map-tags rect { fill:rgba(29,93,138,.25); stroke:#D2F4FF; stroke-opacity:.5; }
+.cmcs3d-map-tags text { fill:#ecf9ff; font-size:10px; font-family:Arial,sans-serif; font-weight:700; text-anchor:middle; letter-spacing:1px; }
+
+/* Water never moves the letters themselves: the wave is clipped INSIDE each word. */
+.cmcs3d-water-text { display:inline; }
+.cmcs3d-water-word { position:relative; display:inline-block; color:#fff; isolation:isolate; white-space:nowrap; }
+.cmcs3d-water-word--accent { color:#48cbff; }
+.cmcs3d-water-word::after {
+  content:attr(data-water); position:absolute; top:0; left:0; width:100%; height:100%;
+  color:transparent; pointer-events:none;
+  font:inherit; font-weight:inherit; line-height:inherit; letter-spacing:inherit; white-space:nowrap;
+  -webkit-text-fill-color:transparent;
+  background:linear-gradient(180deg,#d0fbff 0%,#59d9fb 47%,#059bd0 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M0%2051%20C26%2041%2054%2041%2080%2051%20S134%2061%20160%2051%20S214%2041%20240%2051%20S294%2061%20320%2051%20L320%20100%20L0%20100%20Z%22%2F%3E%3C%2Fsvg%3E");
+  mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M0%2051%20C26%2041%2054%2041%2080%2051%20S134%2061%20160%2051%20S214%2041%20240%2051%20S294%2061%20320%2051%20L320%20100%20L0%20100%20Z%22%2F%3E%3C%2Fsvg%3E");
+  -webkit-mask-size:320px 100%; mask-size:320px 100%;
+  -webkit-mask-repeat:repeat-x; mask-repeat:repeat-x;
+  animation:cmcs3d-water-roll 6.3s linear infinite;
+  animation-delay:var(--cmcs-wave-delay, 0s);
+}
+.cmcs3d-water-word--accent::after { background:linear-gradient(180deg,#eaffff,#67e9ff 45%,#00a6e6); -webkit-background-clip:text; background-clip:text; }
+@keyframes cmcs3d-water-roll { to { -webkit-mask-position:-320px 0; mask-position:-320px 0; } }
+@keyframes cmcs3d-float { 0%,100% {transform:translateY(0)} 50% {transform:translateY(-4px)} }
+@keyframes cmcs3d-route-travel { to {stroke-dashoffset:-144} }
+@media(max-width:1400px) {
+  .cmcs3d-shell { padding-left:60px; padding-right:60px; }
+  .cmcs3d-headline { font-size:clamp(42px,4.2vw,62px); }
+  .cmcs3d-grid { grid-template-columns:minmax(0,1fr) 236px; gap:23px; }
+  .cmcs3d-credential {padding:15px 12px;}
+  .cmcs3d-trust-item { padding:6px 14px; }
+}
+@media(max-width:1100px) {
+  .cmcs3d-shell { padding:70px 48px 27px; }
+  .cmcs3d-grid { min-height:520px; grid-template-columns:minmax(0,1fr); }
+  .cmcs3d-copy { max-width:790px; }
+  .cmcs3d-credentials { display:none; }
+  .cmcs3d-route-map {left:29%;width:80%;top:8%;opacity:.35;}
+  .cmcs3d-trust { grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:8px; }
+  .cmcs3d-trust-item:nth-child(3) {border-left:0;}
+  .cmcs3d-trust-item:nth-child(n+3) {border-top:1px solid rgba(224,248,255,.25); padding-top:17px;margin-top:12px;}
+}
+@media(max-width:680px) {
+  .cmcs3d-hero {min-height:0;}
+  .cmcs3d-shell {padding:72px 22px 24px;}
+  .cmcs3d-grid {min-height:530px;}
+  .cmcs3d-photo-image {object-position:64% center;}
+  .cmcs3d-shade {background:linear-gradient(90deg,rgba(2,26,47,.91),rgba(3,35,60,.7) 60%,rgba(3,33,57,.55));}
+  .cmcs3d-route-map {display:none;}
+  .cmcs3d-eyebrow {font-size:10px; letter-spacing:.13em; margin-bottom:20px; gap:9px;}
+  .cmcs3d-eyebrow > span {width:24px;}
+  .cmcs3d-headline {font-size:clamp(32px,8vw,46px); line-height:1.12;}
+  .cmcs3d-title-line {white-space:normal;}
+  .cmcs3d-description {font-size:14px;line-height:1.65; margin-top:21px;}
+  .cmcs3d-actions {gap:10px; margin-top:25px;}
+  .cmcs3d-button {font-size:12px; min-height:48px;padding:12px 17px;gap:8px;}
+  .cmcs3d-progress {margin-top:29px;gap:14px;}
+  .cmcs3d-trust {padding:8px 5px; margin-top:10px;}
+  .cmcs3d-trust-item {gap:9px; padding:10px 7px;}
+  .cmcs3d-trust-item svg {width:25px;height:25px;}
+  .cmcs3d-trust-item strong {font-size:10px;}
+  .cmcs3d-trust-item span {font-size:9px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .cmcs3d-credential, .cmcs3d-route-line, .cmcs3d-water-word::after, .cmcs3d-slide-copy-content, .cmcs3d-photo-image {animation:none !important;}
+  .cmcs3d-photo {transition:none;}
+  .cmcs3d-button {transition:none;}
+}

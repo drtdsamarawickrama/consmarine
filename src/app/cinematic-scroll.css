@@ -1,0 +1,82 @@
+/* CMCS Cinematic Motion System — progressive enhancement, no dependency on Motion. */
+/* Default content is visible. Only elements registered by the client observer are hidden. */
+@media (prefers-reduced-motion: no-preference) {
+  html.cmcs-cinematic-active [data-cmcs-reveal="waiting"] {
+    opacity: 0;
+    translate: 0 52px;
+    scale: 0.972;
+    rotate: x 4deg;
+    filter: blur(5px);
+    transform-origin: center bottom;
+  }
+
+  html.cmcs-cinematic-active [data-cmcs-reveal="revealing"] {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+    rotate: x 0deg;
+    filter: blur(0px);
+    transform-origin: center bottom;
+    transition:
+      opacity 870ms cubic-bezier(0.2, 0.7, 0.2, 1),
+      translate 1030ms cubic-bezier(0.16, 1, 0.3, 1),
+      scale 1030ms cubic-bezier(0.16, 1, 0.3, 1),
+      rotate 1050ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 820ms ease-out;
+    transition-delay: var(--cmcs-stagger-delay, 0ms);
+  }
+}
+
+/* Create genuine perspective during staggered scroll entrances. */
+.cmcs-perspective-scope { perspective: 1300px; }
+
+/* The 3D lift is applied only to fine-pointer devices. Touch remains stable. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  [data-cmcs-depth="true"] {
+    --cmcs-tilt-x: 0deg;
+    --cmcs-tilt-y: 0deg;
+    --cmcs-pointer-x: 50%;
+    --cmcs-pointer-y: 40%;
+    position: relative;
+    transform: perspective(1100px) rotateX(var(--cmcs-tilt-x)) rotateY(var(--cmcs-tilt-y));
+    transform-style: preserve-3d;
+    transition: transform 220ms ease-out, box-shadow 300ms ease-out, border-color 300ms ease-out;
+    will-change: auto;
+    isolation: isolate;
+  }
+
+  [data-cmcs-depth="true"]:hover {
+    will-change: transform;
+    translate: 0 -6px;
+    box-shadow: 0 27px 60px rgba(4, 28, 48, 0.16), 0 5px 18px rgba(5, 40, 62, 0.07);
+  }
+
+  [data-cmcs-depth="true"]::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: inherit;
+    background: radial-gradient(
+      280px circle at var(--cmcs-pointer-x) var(--cmcs-pointer-y),
+      rgba(90, 203, 231, 0.12), transparent 72%
+    );
+    opacity: 0;
+    transition: opacity 420ms ease-out;
+  }
+
+  [data-cmcs-depth="true"]:hover::after {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-cmcs-reveal] {
+    opacity: 1 !important;
+    filter: none !important;
+    translate: none !important;
+    scale: none !important;
+    rotate: none !important;
+  }
+}
