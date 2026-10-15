@@ -72,7 +72,7 @@ export default function AboutPage() {
 
               <div className="relative aspect-4/3 overflow-hidden rounded-2xl border border-stone-200 shadow-[0_15px_40px_rgba(6,29,50,0.12)]">
                 <Image
-                  src="/images/gallery/g1.jpeg"
+                  src="/images/gallery/imgupscaler-enhanced (1).jpg"
                   alt="Constellation Marine vessel operations"
                   fill
                   sizes="(max-width:1024px) 100vw, 50vw"

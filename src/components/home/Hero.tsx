@@ -38,7 +38,7 @@ const slides: HeroSlide[] = [
       "Providing reliable marine consultancy and surveying services worldwide, backed by independent expertise, professional integrity, and a commitment to excellence.",
   },
   {
-    image: "/images/hero/cmcs-cinematic-ship-2.webp",
+    image: "/images/hero/ship.webp",
     eyebrow: "Worldwide Reach • Reliable Marine Solutions",
     firstLine: "Independent Marine",
     secondLine: "Expertise & Support",

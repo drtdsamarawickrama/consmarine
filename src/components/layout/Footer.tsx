@@ -147,7 +147,7 @@ export default function Footer() {
             >
               <div className="rounded-lg bg-white p-2">
                 <Image
-                  src="/images/credentials/ceylon-chamber.png"
+                  src="/images/credentials/ceylon-chamber1.png"
                   width={200}
                   height={65}
                   className="h-10 w-auto object-contain mx-auto"
@@ -170,7 +170,7 @@ export default function Footer() {
               <div className="mt-3 flex items-center gap-2">
                 <div className="rounded bg-white p-1">
                   <Image
-                    src="/images/credentials/sri-lanka-ports-authority.jpg"
+                    src="/images/credentials/sri-lanka-ports-authority1.jpg"
                     width={55}
                     height={38}
                     alt="Sri Lanka Ports Authority"
@@ -179,7 +179,7 @@ export default function Footer() {
                 </div>
                 <div className="rounded bg-white p-1">
                   <Image
-                    src="/images/credentials/hambantota-port.png"
+                    src="/images/credentials/hambantota-port1.png"
                     width={70}
                     height={38}
                     alt="Hambantota International Port"
