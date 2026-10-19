@@ -1,380 +1,152 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-midnight: #061d32;
-  --color-deep-ocean: #0b3555;
-  --color-maritime: #155c80;
-  --color-teal-dark: #2385a1;
-  --color-marine: #155c80;
-  --color-aqua: #49c5e5;
-  --color-aqua-light: #7ee3ff;
-  --color-ivory: #f7f7f4;
-  --color-soft-white: #fafbfc;
-  --color-stone-light: #e8eff1;
-  --color-graphite: #253b4a;
-  --color-gold: #d8b67c;
-  --color-silver: #b8ccd7;
-  --color-mist: #9bbbcd;
-  --color-ice: #e2f1f5;
-  --color-navy: #061d32;
-  --color-ocean: #155c80;
+  --color-midnight: #071d33;
+  --color-deep-ocean: #04182a;
+  --color-maritime: #12476b;
+  --color-teal-dark: #12476b;
+  --color-marine: #12476b;
+  --color-aqua: #1686c4;
+  --color-aqua-light: #70bfff;
+  --color-ivory: #f7fafc;
+  --color-soft-white: #f7fafc;
+  --color-stone-light: #e8eef3;
+  --color-graphite: #52677c;
+  --color-gold: #b99d70;
+  --color-silver: #d6e0e8;
+  --color-mist: #afc0ce;
+  --color-ice: #edf4f8;
+  --color-navy: #071d33;
+  --color-ocean: #12476b;
   --font-sans: var(--font-inter);
   --font-heading: var(--font-manrope);
 }
 
 :root {
   color-scheme: light;
-  --bg-midnight: #061d32;
-  --bg-deep-ocean: #0b3555;
-  --color-aqua: #49c5e5;
+  --font-inter: Inter, "Segoe UI", Arial, sans-serif;
+  --font-manrope: Manrope, "Segoe UI", Arial, sans-serif;
+  --cmcs-primary: #071d33;
+  --cmcs-deep-ocean: #04182a;
+  --cmcs-marine: #12476b;
+  --cmcs-accent: #1686c4;
+  --cmcs-light-blue: #70bfff;
+  --cmcs-surface: #fff;
+  --cmcs-background: #f7fafc;
+  --cmcs-border: #142b42;
+  --cmcs-text: #10233b;
+  --cmcs-muted: #52677c;
+  --cmcs-ease: cubic-bezier(.22, 1, .36, 1);
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 85px;
-  background-color: #061d32;
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; background: #f7fafc; }
 body {
   margin: 0;
-  background: #fafbfc;
-  color: #253b4a;
-  font-family: var(--font-inter), Arial, sans-serif;
   overflow-x: hidden;
+  background: #fff;
+  color: #10233b;
+  font-family: var(--font-inter), Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
+  color: #10233b;
   font-family: var(--font-manrope), Arial, sans-serif;
-  letter-spacing: -0.02em;
+  letter-spacing: -.025em;
 }
+::selection { color: #fff; background: #12476b; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid #1686c4; outline-offset: 3px; }
 
-::selection {
-  background: #49c5e5;
-  color: #04182b;
-}
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-:focus-visible {
-  outline: 2px solid #49c5e5;
-  outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ================================================================
-   Deep Ocean Luxury Surfaces & Glassmorphism System
-   ================================================================ */
-.cmcs-ocean-bg-dark {
-  background: radial-gradient(circle at 50% 0%, #0d3b5d 0%, #04182b 70%);
-}
-
-.cmcs-ocean-bg-gradient {
-  background: linear-gradient(180deg, #04182b 0%, #0b304b 50%, #04182b 100%);
-}
-
-.cmcs-ocean-bg-teal {
-  background: linear-gradient(135deg, #05213b 0%, #0c3e5d 50%, #04182b 100%);
-}
-
-.cmcs-card-glass {
-  background: linear-gradient(
-    135deg,
-    rgba(11, 48, 75, 0.6) 0%,
-    rgba(4, 24, 43, 0.75) 100%
-  );
-  border: 1px solid rgba(73, 197, 229, 0.18);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow:
-    0 14px 34px -10px rgba(0, 10, 24, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.cmcs-card-glass:hover {
-  border-color: rgba(73, 197, 229, 0.45);
-  box-shadow:
-    0 20px 45px -12px rgba(2, 16, 32, 0.8),
-    0 0 24px -4px rgba(73, 197, 229, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transform: translateY(-4px);
-}
-
+/* Shared Review Version 2 surfaces. */
 .cmcs-card-light {
-  background: #ffffff;
-  border: 1px solid #e8eff1;
-  border-radius: 1rem;
-  box-shadow: 0 10px 30px -10px rgba(6, 29, 50, 0.07);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--cmcs-border);
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(7, 29, 51, .06);
+  transition: transform 260ms var(--cmcs-ease), border-color 260ms ease, box-shadow 260ms ease;
 }
-
 .cmcs-card-light:hover {
-  border-color: rgba(35, 133, 161, 0.5);
-  box-shadow:
-    0 20px 40px -12px rgba(6, 29, 50, 0.12),
-    0 0 20px -5px rgba(73, 197, 229, 0.15);
-  transform: translateY(-4px);
+  border-color: #12476b;
+  box-shadow: 0 11px 24px rgba(7, 29, 51, .11);
+  transform: translateY(-3px);
 }
-
-.cmcs-card-navy {
-  background: linear-gradient(135deg, #0b3555 0%, #061d32 100%);
-  border: 1px solid rgba(73, 197, 229, 0.25);
-  border-radius: 1rem;
-  color: #ffffff;
-  box-shadow:
-    0 14px 34px -10px rgba(0, 10, 24, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+.cmcs-card-dark {
+  border: 1px solid #35536c;
+  border-radius: 5px;
+  background: #0b2944;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(2, 15, 28, .2);
 }
-
-.cmcs-card-navy:hover {
-  border-color: rgba(73, 197, 229, 0.55);
-  box-shadow:
-    0 20px 45px -12px rgba(2, 16, 32, 0.8),
-    0 0 24px -4px rgba(73, 197, 229, 0.25);
-  transform: translateY(-4px);
+.cmcs-button {
+  border-radius: 5px;
+  transition: transform 220ms var(--cmcs-ease), color 220ms ease, background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
+.cmcs-button:hover { transform: translateY(-2px); }
 
-.cmcs-badge-aqua {
+/* Explicit About actions remain visible if utility styles are unavailable. */
+.cmcs-about-actions {
+  width: fit-content;
+  max-width: 100%;
+  padding: 6px;
+  border: 1px solid #d6e0e8;
+  border-radius: 5px;
+  background: #fff;
+}
+.cmcs-about-button {
   display: inline-flex;
+  min-height: 44px;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  background: rgba(73, 197, 229, 0.1);
-  border: 1px solid rgba(73, 197, 229, 0.3);
-  color: #7ee3ff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.cmcs-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 13px 26px;
-  border-radius: 9999px;
+  padding: 10px 16px;
+  border: 1px solid #071d33;
+  border-radius: 4px;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.3;
-  color: #04182b;
-  background: #ffffff;
-  border: 1px solid #ffffff;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  transition: all 0.25s ease;
   text-decoration: none;
-  cursor: pointer;
+  transition: color 220ms ease, background-color 220ms ease, transform 220ms ease;
 }
+.cmcs-about-button:hover { transform: translateY(-2px); }
+.cmcs-about-button-primary { color: #fff; background: #071d33; }
+.cmcs-about-button-primary:hover { color: #fff; background: #12476b; }
+.cmcs-about-button-secondary { color: #071d33; background: #fff; }
+.cmcs-about-button-secondary:hover { color: #071d33; background: #e8eef3; }
+.cmcs-contact-card h2 { color: #fff !important; }
+.cmcs-contact-card p { color: #d6e0e8; }
 
-.cmcs-btn-primary:hover {
-  background: #d4f4ff;
-  border-color: #d4f4ff;
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(73, 197, 229, 0.35);
+/* Keep existing layouts, but use the brief's restrained 4–6px corners. */
+main :is(.rounded-3xl, .rounded-2xl, .rounded-xl, .rounded-lg, [class*="rounded-[22px]"], [class*="rounded-[20px]"]) {
+  border-radius: 5px !important;
 }
+main :is(a, button).rounded-full { border-radius: 5px !important; }
+main :is(input, textarea).rounded-full { border-radius: 5px !important; }
+.cmcs-footer :is(.rounded-xl, .rounded-2xl, .rounded-lg) { border-radius: 5px; }
 
-.cmcs-btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 13px 26px;
-  border-radius: 9999px;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #ffffff;
-  background: rgba(11, 48, 75, 0.5);
-  border: 1px solid rgba(73, 197, 229, 0.5);
-  backdrop-filter: blur(10px);
-  transition: all 0.25s ease;
-  text-decoration: none;
-  cursor: pointer;
+/* Consistent colors for cards and informational panels over dark sections. */
+.cmcs-dark-section .cmcs-dark-card,
+.cmcs-contact-cta .cmcs-dark-card {
+  border-color: #35536c;
+  background: #0b2944;
+  box-shadow: 0 8px 24px rgba(2, 15, 28, .22);
 }
+.cmcs-dark-section h2,
+.cmcs-dark-card h2,
+.cmcs-dark-card h3,
+.cmcs-contact-cta h2 { color: #fff !important; }
+.cmcs-dark-card p,
+.cmcs-contact-cta p { color: #d6e0e8; }
+.cmcs-footer h2,
+.cmcs-footer h3 { color: #fff; }
 
-.cmcs-btn-secondary:hover {
-  background: rgba(73, 197, 229, 0.2);
-  border-color: #49c5e5;
-  color: #7ee3ff;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(73, 197, 229, 0.2);
-}
-
-.cmcs-btn-aqua {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 13px 26px;
-  border-radius: 9999px;
-  font-size: 14px;
-  font-weight: 750;
-  line-height: 1.3;
-  color: #04182b;
-  background: linear-gradient(135deg, #49c5e5 0%, #197ba0 100%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 10px 25px rgba(73, 197, 229, 0.35);
-  transition: all 0.25s ease;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.cmcs-btn-aqua:hover {
-  background: linear-gradient(135deg, #7ee3ff 0%, #49c5e5 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 14px 35px rgba(73, 197, 229, 0.5);
-}
-
-/* CMCS Hero: subtle seawater refraction in the lower half of each letter. */
-.cmcs-water-word {
-  position: relative;
-  display: inline-block;
-  isolation: isolate;
-}
-
-.cmcs-water-word--accent {
-  color: #54ccff;
-  text-shadow: 0 0 24px rgb(58 186 255 / 15%);
-}
-
-.cmcs-water-word::after {
-  content: attr(data-ripple-text);
-  position: absolute;
-  inset: 0;
-  display: block;
-  white-space: pre;
-  color: inherit;
-  pointer-events: none;
-  /* Clip within EACH word, rather than just the last line of the heading. */
-  clip-path: inset(52% -9% -8% -9%);
-  opacity: 0.82;
-  filter: url(#cmcs-letter-refraction);
-  animation: cmcs-water-letter-drift 3.8s ease-in-out infinite;
-  will-change: transform;
-}
-
-@keyframes cmcs-water-letter-drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  24% {
-    transform: translate3d(1px, 1px, 0) skewX(0.5deg);
-  }
-  52% {
-    transform: translate3d(-1px, 0, 0) skewX(-0.45deg);
-  }
-  76% {
-    transform: translate3d(0.5px, -0.5px, 0) skewX(0.2deg);
-  }
+@media (max-width: 560px) {
+  .cmcs-about-actions { width: 100%; }
+  .cmcs-about-button { flex: 1 1 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cmcs-water-word::after {
-    animation: none;
-    filter: none;
-    display: none;
-  }
-}
-
-/* ================================================================
-   CMCS - Actual ocean WATER INSIDE letters (not distorted letters)
-   Changes only the Hero headline. Text stays crisp above waterline.
-   The duplicate glyph overlay has a blue gradient and a moving SVG
-   wave mask. Accessible + GPU-light + reduced-motion friendly.
-   ================================================================ */
-.cmcs-liquid-heading {
-  display: inline;
-}
-
-.cmcs-liquid-word {
-  display: inline-block;
-  position: relative;
-  isolation: isolate;
-  white-space: nowrap;
-  vertical-align: baseline;
-  color: #ffffff;
-}
-
-.cmcs-liquid-word--accent {
-  color: #b3edff;
-}
-
-.cmcs-liquid-word::after {
-  content: attr(data-water-text);
-  position: absolute;
-  inset: 0;
-  display: block;
-  pointer-events: none;
-  white-space: nowrap;
-  font: inherit;
-  font-weight: inherit;
-  letter-spacing: inherit;
-  line-height: inherit;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  background: linear-gradient(180deg, #a9efff 0%, #38bdf8 45%, #0576c5 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M0%2050%20C26%2038%2054%2038%2080%2050%20S134%2062%20160%2050%20S214%2038%20240%2050%20S294%2062%20320%2050%20L320%20100%20L0%20100%20Z%22%2F%3E%3C%2Fsvg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M0%2050%20C26%2038%2054%2038%2080%2050%20S134%2062%20160%2050%20S214%2038%20240%2050%20S294%2062%20320%2050%20L320%20100%20L0%20100%20Z%22%2F%3E%3C%2Fsvg%3E");
-  -webkit-mask-repeat: repeat-x;
-  mask-repeat: repeat-x;
-  -webkit-mask-size: 320px 100%;
-  mask-size: 320px 100%;
-  -webkit-mask-position: 0px 0px;
-  mask-position: 0px 0px;
-  animation: cmcs-water-flow 6.4s linear infinite;
-  animation-delay: var(--cmcs-liquid-delay, 0s);
-}
-
-.cmcs-liquid-word--accent::after {
-  background: linear-gradient(180deg, #e1fcff 0%, #55d8ff 42%, #058aca 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-/* One full wave cycle moves through each word continuously. */
-@keyframes cmcs-water-flow {
-  from {
-    -webkit-mask-position: 0px 0px;
-    mask-position: 0px 0px;
-  }
-  to {
-    -webkit-mask-position: -320px 0px;
-    mask-position: -320px 0px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cmcs-liquid-word::after {
-    animation: none;
-  }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  .cmcs-card-light, .cmcs-button { transition: none; transform: none; }
 }

@@ -118,13 +118,13 @@ export default function AboutPage() {
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-midnight px-7 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-deep-ocean hover:shadow-lg"
+                  className="inline-flex items-center gap-2 cmcs-button rounded-[5px] bg-midnight px-6 py-3.5 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-maritime"
                 >
                   Request a Survey <ArrowRight size={16} />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-6 py-3.5 text-sm font-bold text-midnight shadow-xs transition-all duration-300 hover:border-maritime hover:text-maritime"
+                  className="inline-flex items-center gap-2 cmcs-button rounded-[5px] border border-[#142b42] bg-white px-6 py-3.5 text-sm font-bold text-midnight shadow-xs transition-all duration-300 hover:border-maritime hover:bg-[#e8eef3]"
                 >
                   Explore Services
                 </Link>
@@ -135,7 +135,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. Vision, Mission & Values Grid — Deep Ocean Navy */}
-      <section className="relative isolate py-20 lg:py-24 bg-linear-to-b from-midnight via-[#07243c] to-midnight text-white border-y border-aqua/15">
+      <section className="cmcs-dark-section relative isolate py-20 lg:py-24 bg-[#071d33] text-white border-y border-[#35536c]">
         <Container>
           <Reveal
             variant="heading"
@@ -158,8 +158,8 @@ export default function AboutPage() {
           <div className="grid gap-8 md:grid-cols-3">
             {/* Vision */}
             <Reveal variant="card" className="h-full">
-              <div className="group relative flex flex-col rounded-2xl border border-aqua/25 bg-linear-to-b from-deep-ocean/80 to-midnight/95 p-8 backdrop-blur-xl shadow-[0_12px_30px_rgba(0,10,24,0.5)] transition-all duration-300 hover:-translate-y-2 hover:border-aqua/60 hover:shadow-[0_20px_45px_rgba(0,10,24,0.8),0_0_25px_rgba(73,197,229,0.25)]">
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl border border-aqua/30 bg-teal-dark/40 text-aqua shadow-[0_0_15px_rgba(73,197,229,0.2)]">
+              <div className="cmcs-card-dark cmcs-dark-card group relative flex flex-col p-7 transition-transform duration-300 hover:-translate-y-1 sm:p-8">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[5px] border border-[#70bfff]/45 bg-[#12476b] text-[#70bfff]">
                   <Compass size={28} />
                 </div>
                 <h3 className="text-2xl font-bold text-white group-hover:text-aqua-light transition-colors">
@@ -173,8 +173,8 @@ export default function AboutPage() {
 
             {/* Mission */}
             <Reveal variant="card" delay={0.09} className="h-full">
-              <div className="group relative flex flex-col rounded-2xl border border-aqua/25 bg-linear-to-b from-deep-ocean/80 to-midnight/95 p-8 backdrop-blur-xl shadow-[0_12px_30px_rgba(0,10,24,0.5)] transition-all duration-300 hover:-translate-y-2 hover:border-aqua/60 hover:shadow-[0_20px_45px_rgba(0,10,24,0.8),0_0_25px_rgba(73,197,229,0.25)]">
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl border border-aqua/30 bg-teal-dark/40 text-aqua shadow-[0_0_15px_rgba(73,197,229,0.2)]">
+              <div className="cmcs-card-dark cmcs-dark-card group relative flex flex-col p-7 transition-transform duration-300 hover:-translate-y-1 sm:p-8">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[5px] border border-[#70bfff]/45 bg-[#12476b] text-[#70bfff]">
                   <Target size={28} />
                 </div>
                 <h3 className="text-2xl font-bold text-white group-hover:text-aqua-light transition-colors">
@@ -188,8 +188,8 @@ export default function AboutPage() {
 
             {/* Values */}
             <Reveal variant="card" delay={0.18} className="h-full">
-              <div className="group relative flex flex-col rounded-2xl border border-aqua/25 bg-linear-to-b from-deep-ocean/80 to-midnight/95 p-8 backdrop-blur-xl shadow-[0_12px_30px_rgba(0,10,24,0.5)] transition-all duration-300 hover:-translate-y-2 hover:border-aqua/60 hover:shadow-[0_20px_45px_rgba(0,10,24,0.8),0_0_25px_rgba(73,197,229,0.25)]">
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl border border-aqua/30 bg-teal-dark/40 text-aqua shadow-[0_0_15px_rgba(73,197,229,0.2)]">
+              <div className="cmcs-card-dark cmcs-dark-card group relative flex flex-col p-7 transition-transform duration-300 hover:-translate-y-1 sm:p-8">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[5px] border border-[#70bfff]/45 bg-[#12476b] text-[#70bfff]">
                   <Gem size={28} />
                 </div>
                 <h3 className="text-2xl font-bold text-white group-hover:text-aqua-light transition-colors">

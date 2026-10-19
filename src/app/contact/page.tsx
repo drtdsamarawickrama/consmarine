@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="bg-[#F7F7F4] text-midnight">
+    <main className="bg-soft-white text-midnight">
       <PageBanner
         title="Contact Us"
         eyebrow="24/7 Global Desk"
         subtitle="Get in Touch with Our Certified Marine Surveyors and Technical Experts."
-        image="/images/gallery/g4.jpeg"
+        image="/images/gallery/contact.jpg"
         breadcrumbs={[{ label: "Contact" }]}
       />
 
@@ -46,7 +46,7 @@ export default function ContactPage() {
               {/* Contact Info Cards — White with subtle border */}
               <div className="space-y-4">
                 {/* Location */}
-                <div className="flex items-start gap-4 rounded-2xl border border-stone-200 bg-white p-5 shadow-[0_4px_16px_rgba(6,29,50,0.05)]">
+                <div className="cmcs-card-light flex items-start gap-4 p-5">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-stone-200 bg-[#E8EFF1] text-maritime">
                     <MapPin size={22} />
                   </div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Telephone */}
-                <div className="flex items-start gap-4 rounded-2xl border border-stone-200 bg-white p-5 shadow-[0_4px_16px_rgba(6,29,50,0.05)]">
+                <div className="cmcs-card-light flex items-start gap-4 p-5">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-stone-200 bg-[#E8EFF1] text-maritime">
                     <Phone size={22} />
                   </div>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Email */}
-                <div className="flex items-start gap-4 rounded-2xl border border-stone-200 bg-white p-5 shadow-[0_4px_16px_rgba(6,29,50,0.05)]">
+                <div className="cmcs-card-light flex items-start gap-4 p-5">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-stone-200 bg-[#E8EFF1] text-maritime">
                     <Mail size={22} />
                   </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Hours */}
-                <div className="flex items-start gap-4 rounded-2xl border border-stone-200 bg-white p-5 shadow-[0_4px_16px_rgba(6,29,50,0.05)]">
+                <div className="cmcs-card-light flex items-start gap-4 p-5">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-stone-200 bg-[#E8EFF1] text-maritime">
                     <Clock3 size={22} />
                   </div>
@@ -128,11 +128,11 @@ export default function ContactPage() {
               </div>
 
               {/* Styled Embedded Google Map */}
-              <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white p-2 shadow-[0_6px_24px_rgba(6,29,50,0.08)]">
+              <div className="cmcs-card-light overflow-hidden p-2">
                 <iframe
                   title="Constellation Marine Location on Google Maps"
                   src="https://maps.google.com/maps?q=6.8053374%2C79.8848017&z=15&output=embed"
-                  className="h-[240px] w-full rounded-xl"
+                  className="h-[240px] w-full rounded-[4px]"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />

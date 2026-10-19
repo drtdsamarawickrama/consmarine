@@ -41,11 +41,11 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#fafbfc]/95 backdrop-blur-xl border-b border-[#e8eff1] shadow-[0_4px_25px_rgba(6,29,50,0.08)]"
-          : "bg-[#fafbfc] border-b border-[#e8eff1]"
+          ? "bg-white/95 backdrop-blur-xl border-b border-[#e8eef3] shadow-[0_3px_16px_rgba(7,29,51,0.08)]"
+          : "bg-white border-b border-[#e8eef3]"
       }`}
     >
-      <div className="mx-auto flex h-[82px] max-w-[1500px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto flex h-[74px] max-w-[1500px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-12">
         {/* Brand Logo & Lockup — natural proportions without awkward square frame */}
         <Link
           href="/"
@@ -86,13 +86,13 @@ export default function Navbar() {
                 aria-current={isActive ? "page" : undefined}
                 className={`relative py-2 text-[13.5px] font-bold tracking-wide transition-colors ${
                   isActive
-                    ? "text-maritime"
-                    : "text-graphite hover:text-midnight"
+                    ? "text-[#12476b]"
+                    : "text-[#52677c] hover:text-[#071d33]"
                 }`}
               >
                 {n.title}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2.5px] rounded-full bg-gradient-to-r from-maritime to-aqua shadow-[0_1px_4px_rgba(73,197,229,0.5)]" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#1686c4]" />
                 )}
               </Link>
             );
@@ -102,7 +102,7 @@ export default function Navbar() {
         {/* Premium Deep Navy CTA Button */}
         <Link
           href="/contact"
-          className="ml-auto hidden shrink-0 items-center gap-2 rounded-full bg-midnight px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_16px_rgba(6,29,50,0.25)] transition-all duration-300 hover:bg-deep-ocean hover:scale-105 hover:shadow-[0_8px_24px_rgba(6,29,50,0.35)] sm:inline-flex xl:ml-0"
+          className="ml-auto hidden shrink-0 items-center gap-2 rounded-[5px] bg-[#071d33] px-5 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_12px_rgba(7,29,51,0.16)] transition-all duration-300 hover:bg-[#12476b] sm:inline-flex xl:ml-0"
         >
           Request a Survey <ArrowUpRight size={15} className="text-aqua" />
         </Link>
@@ -110,7 +110,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#e8eff1] bg-white text-midnight shadow-sm transition hover:bg-ivory xl:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-[5px] border border-[#142b42] bg-white text-midnight shadow-sm transition hover:bg-[#f7fafc] xl:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-nav"
@@ -125,7 +125,7 @@ export default function Navbar() {
         <nav
           id="mobile-nav"
           aria-label="Mobile navigation"
-          className="absolute left-0 right-0 top-full max-h-[calc(100dvh-82px)] overflow-y-auto border-t border-[#e8eff1] bg-[#fafbfc]/98 p-6 backdrop-blur-2xl shadow-xl xl:hidden"
+          className="absolute left-0 right-0 top-full max-h-[calc(100dvh-74px)] overflow-y-auto border-t border-[#e8eef3] bg-white p-6 shadow-[0_12px_24px_rgba(7,29,51,0.12)] xl:hidden"
         >
           <div className="mx-auto flex max-w-[1500px] flex-col gap-2">
             {navigation.map((n) => {
@@ -135,7 +135,7 @@ export default function Navbar() {
                   key={n.href}
                   href={n.href}
                   onClick={() => setOpen(false)}
-                  className={`flex items-center justify-between rounded-xl px-4 py-3.5 text-sm font-bold transition ${
+                  className={`flex items-center justify-between rounded-[5px] px-4 py-3.5 text-sm font-bold transition ${
                     isActive
                       ? "bg-stone-light/60 text-maritime"
                       : "text-graphite hover:bg-stone-light/40 hover:text-midnight"
@@ -151,7 +151,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-4 flex items-center justify-center gap-2 rounded-full bg-midnight px-5 py-3.5 text-center text-sm font-bold uppercase tracking-wider text-white shadow-lg transition hover:bg-deep-ocean sm:hidden"
+              className="mt-4 flex items-center justify-center gap-2 rounded-[5px] bg-midnight px-5 py-3.5 text-center text-sm font-bold uppercase tracking-wider text-white shadow-md transition hover:bg-deep-ocean sm:hidden"
             >
               Request a Survey <ArrowUpRight size={17} className="text-aqua" />
             </Link>

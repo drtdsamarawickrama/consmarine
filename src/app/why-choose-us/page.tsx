@@ -39,7 +39,7 @@ export default function WhyPage() {
         title="Why Choose Us"
         eyebrow="Our Competitive Advantage"
         subtitle="Independent Expertise. Global Perspective. Reliable Results."
-        image="/images/hero/cmcs-cinematic-ship-2.webp"
+        image="/images/hero/ship.webp"
         breadcrumbs={[{ label: "Why Choose Us" }]}
       />
 
@@ -47,7 +47,7 @@ export default function WhyPage() {
       <WhyPreview full />
 
       {/* Strategic Location Advantage: Sri Lanka Maritime Crossroads — Deep Ocean Navy */}
-      <section className="relative isolate py-20 lg:py-28 bg-linear-to-b from-midnight via-[#07243c] to-midnight text-white border-y border-aqua/15">
+      <section className="relative isolate border-y border-white/10 bg-[#04182A] py-16 text-white lg:py-20">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal variant="heading">
@@ -74,14 +74,14 @@ export default function WhyPage() {
               </p>
 
               <div className="mt-8 grid grid-cols-2 gap-4">
-                <div className="rounded-xl border border-aqua/25 bg-deep-ocean/60 p-4 backdrop-blur-md">
-                  <div className="text-2xl font-extrabold text-aqua">24/7</div>
+                <div className="cmcs-card-dark p-4">
+                  <div className="text-2xl font-extrabold text-[#70BFFF]">24/7</div>
                   <div className="mt-1 text-xs text-silver">
                     Immediate Surveyor Dispatch
                   </div>
                 </div>
-                <div className="rounded-xl border border-aqua/25 bg-deep-ocean/60 p-4 backdrop-blur-md">
-                  <div className="text-2xl font-extrabold text-aqua">
+                <div className="cmcs-card-dark p-4">
+                  <div className="text-2xl font-extrabold text-[#70BFFF]">
                     4 Major
                   </div>
                   <div className="mt-1 text-xs text-silver">
@@ -93,7 +93,7 @@ export default function WhyPage() {
               <div className="mt-8">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-aqua px-7 py-3.5 text-sm font-bold text-midnight shadow-md transition-all duration-300 hover:shadow-[0_0_30px_rgba(73,197,229,0.5)] hover:scale-105"
+                  className="cmcs-button inline-flex items-center gap-2 bg-white px-6 py-3 text-sm font-bold text-[#071D33] transition-colors hover:bg-[#E8EEF3]"
                 >
                   Appoint a Surveyor <ArrowUpRight size={17} />
                 </Link>
@@ -105,7 +105,7 @@ export default function WhyPage() {
               {portHubs.map((hub) => (
                 <div
                   key={hub.name}
-                  className="rounded-2xl border border-aqua/20 bg-linear-to-r from-deep-ocean/70 to-midnight/90 p-5 backdrop-blur-xl transition hover:border-aqua/50 hover:bg-deep-ocean/90"
+                  className="cmcs-card-dark p-5 transition-colors hover:bg-[#12476B]"
                 >
                   <div className="flex items-center gap-3 mb-1.5">
                     <MapPin size={18} className="text-aqua" />

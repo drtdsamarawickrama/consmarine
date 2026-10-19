@@ -23,20 +23,12 @@ export default function ServiceCard({
     >
       <Link
         href={`/services/${service.slug}`}
-        className={`group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[22px] border transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-1.5 ${
+        className={`cmcs-service-card group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[5px] border transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-1 ${
           isNavy
-            ? "border-aqua/30 bg-gradient-to-b from-deep-ocean via-[#082b46] to-midnight text-white shadow-[0_14px_34px_rgba(6,29,50,0.24)] hover:border-aqua/60 hover:shadow-[0_22px_48px_rgba(6,29,50,0.34)]"
-            : "border-[#d7e3e9] bg-[#fcfdfd] text-midnight shadow-[0_12px_32px_rgba(6,29,50,0.075),0_2px_5px_rgba(6,29,50,0.025)] hover:border-[#84b9c9] hover:shadow-[0_22px_46px_rgba(6,29,50,0.15),0_5px_10px_rgba(6,29,50,0.025)]"
+            ? "cmcs-card-dark text-white hover:border-[#70bfff]"
+            : "cmcs-card-light text-midnight"
         }`}
       >
-        {/* A subtle line ties all service cards into the CMCS brand. */}
-        <div
-          aria-hidden="true"
-          className={`pointer-events-none absolute inset-x-0 top-0 z-10 h-[3px] bg-gradient-to-r from-maritime via-aqua to-transparent transition-opacity duration-300 ${
-            isNavy ? "opacity-85" : "opacity-70 group-hover:opacity-100"
-          }`}
-        />
-
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#e8eff1]">
           <Image
             src={service.image}
@@ -56,15 +48,15 @@ export default function ServiceCard({
           <span
             className={`absolute left-3 top-3 rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.08em] backdrop-blur-md ${
               isNavy
-                ? "border-aqua/35 bg-midnight/80 text-aqua-light"
-                : "border-[#d2e6ec] bg-[#f3fbfd]/95 text-maritime shadow-sm"
+                ? "border-white/40 bg-[#071d33]/90 text-white"
+                : "border-white/80 bg-[#071d33]/90 text-white shadow-sm"
             }`}
           >
             Survey
           </span>
         </div>
 
-        <div className="flex flex-1 flex-col p-6">
+        <div className="flex flex-1 flex-col p-5 sm:p-6">
           <h3
             className={`text-base font-bold leading-[1.5] transition-colors duration-200 ${
               isNavy
@@ -83,7 +75,7 @@ export default function ServiceCard({
           </p>
           <div
             className={`mt-auto flex items-center justify-between border-t pt-6 ${
-              isNavy ? "border-aqua/20" : "border-[#e6edf0]"
+              isNavy ? "border-white/20" : "border-[#d7e0e8]"
             }`}
           >
             <span

@@ -60,12 +60,7 @@ const sectors = [
 
 export default function IndustriesPreview() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#F7F7F4] py-20 lg:py-28 text-midnight border-t border-stone-200/70">
-      {/* Subtle architectural grid pattern */}
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(#0b3555_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.035]"
-        aria-hidden="true"
-      />
+    <section className="relative isolate overflow-hidden border-t border-[#e8eef3] bg-white py-20 text-midnight lg:py-24">
 
       <Container className="relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
@@ -77,7 +72,7 @@ export default function IndustriesPreview() {
           />
           <Link
             href="/industries"
-            className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-6 py-3 text-xs font-bold text-midnight shadow-xs transition-all duration-300 hover:border-aqua hover:bg-midnight hover:text-white hover:shadow-md shrink-0 self-start md:self-auto"
+            className="cmcs-button inline-flex shrink-0 items-center gap-2 self-start border border-[#142b42] bg-white px-5 py-3 text-xs font-bold text-midnight shadow-sm transition-all duration-300 hover:border-maritime hover:bg-midnight hover:text-white hover:shadow-md md:self-auto"
           >
             Explore All Sectors <ArrowUpRight size={15} className="text-aqua" />
           </Link>
@@ -94,38 +89,38 @@ export default function IndustriesPreview() {
                 delay={(index % 3) * 0.09}
                 className="h-full min-w-0"
               >
-                <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-stone-200/80 bg-white shadow-[0_6px_24px_rgba(6,29,50,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-aqua/50 hover:shadow-[0_20px_40px_rgba(6,29,50,0.12)]">
+                <div className="cmcs-card-light group relative flex h-full flex-col overflow-hidden">
                   {/* Photo Header */}
-                  <div className="relative h-48 w-full overflow-hidden bg-midnight">
+                  <div className="relative h-44 w-full overflow-hidden bg-midnight">
                     <Image
                       src={sector.image}
                       alt={sector.title}
                       fill
                       sizes="(max-width:768px) 100vw, 33vw"
-                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
+                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     />
                     {/* Subtle realistic maritime gradient overlay */}
                     <div className="absolute inset-0 bg-linear-to-t from-midnight/70 via-midnight/20 to-transparent" />
 
                     {/* Floating Icon badge */}
-                    <div className="absolute bottom-3 left-4 flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-midnight/90 text-aqua shadow-md backdrop-blur-md transition-transform duration-300 group-hover:scale-110 group-hover:bg-aqua group-hover:text-midnight">
-                      <Icon size={20} strokeWidth={2} />
+                    <div className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-[5px] border border-white/55 bg-[#071d33]/90 text-[#70bfff] transition-colors duration-300 group-hover:bg-white group-hover:text-[#12476b]">
+                      <Icon size={18} strokeWidth={1.8} />
                     </div>
                   </div>
 
                   {/* Card Content Body */}
-                  <div className="flex flex-1 flex-col justify-between p-6">
+                  <div className="flex flex-1 flex-col justify-between p-5">
                     <div>
                       <h3 className="text-lg font-bold text-midnight transition-colors duration-200 group-hover:text-maritime">
                         {sector.title}
                       </h3>
 
-                      <p className="mt-2 text-xs leading-relaxed text-graphite/75 font-normal">
+                      <p className="mt-2 text-sm leading-relaxed text-[#52677c] font-normal">
                         {sector.description}
                       </p>
                     </div>
 
-                    <div className="mt-5 flex items-center justify-between border-t border-stone-100 pt-4 text-xs font-bold text-maritime transition-colors group-hover:text-aqua">
+                    <div className="mt-5 flex items-center justify-between border-t border-[#d7e0e8] pt-4 text-xs font-bold text-maritime transition-colors group-hover:text-[#1686c4]">
                       <span className="group-hover:underline">
                         Sector Solutions
                       </span>

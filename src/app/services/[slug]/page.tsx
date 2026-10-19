@@ -135,7 +135,7 @@ export default async function ServiceDetail({
               </div>
 
               {/* Trust & Benefits Panel — Deep Ocean Navy Card */}
-              <div className="rounded-2xl border border-aqua/30 bg-linear-to-b from-deep-ocean to-midnight p-7 text-white backdrop-blur-xl shadow-xl">
+              <div className="cmcs-card-dark p-6 text-white sm:p-7">
                 <h3 className="text-base font-bold flex items-center gap-2">
                   <Compass size={18} className="text-aqua" /> Why Choose CMCS?
                 </h3>
@@ -178,7 +178,7 @@ export default async function ServiceDetail({
               </div>
 
               {/* What This Survey Covers */}
-              <div className="rounded-2xl border border-stone-200 bg-white p-7 shadow-[0_4px_20px_rgba(6,29,50,0.05)]">
+              <div className="cmcs-card-light p-6 sm:p-7">
                 <h3 className="text-lg font-bold text-midnight mb-4">
                   Our Survey Scope Typically Includes
                 </h3>
@@ -205,7 +205,7 @@ export default async function ServiceDetail({
                     return (
                       <div
                         key={d.title}
-                        className="rounded-xl border border-stone-200 bg-white p-4.5 shadow-2xs transition-all duration-300 hover:border-maritime/40 hover:shadow-sm"
+                        className="cmcs-card-light p-4 transition-all duration-300"
                       >
                         <div className="flex items-center gap-3 mb-2">
                           <Icon size={18} className="text-maritime" />

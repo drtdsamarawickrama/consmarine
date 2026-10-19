@@ -10,7 +10,7 @@ export default function GalleryPreview() {
   const previewImages = gallery.slice(0, 4);
 
   return (
-    <section className="relative isolate overflow-hidden border-t border-[#E2E9EC] bg-[#FAFBFC] py-20 lg:py-28 text-midnight">
+    <section className="relative isolate overflow-hidden border-t border-[#e8eef3] bg-[#f7fafc] py-20 text-midnight lg:py-24">
       <Container className="relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <SectionTitle
@@ -21,7 +21,7 @@ export default function GalleryPreview() {
           />
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-2 rounded-full border border-maritime/20 bg-white px-6 py-3 text-xs font-bold text-midnight shadow-sm transition-all duration-300 hover:border-maritime hover:bg-[#E8EFF1] hover:shadow-md shrink-0 self-start md:self-auto"
+            className="cmcs-button inline-flex shrink-0 items-center gap-2 border border-[#142b42] bg-white px-5 py-3 text-xs font-bold text-midnight shadow-sm transition-all duration-300 hover:border-maritime hover:bg-[#e8eef3] hover:shadow-md self-start md:self-auto"
           >
             View Complete Gallery{" "}
             <ArrowUpRight size={15} className="text-aqua" />
@@ -39,14 +39,14 @@ export default function GalleryPreview() {
             >
               <Link
                 href="/gallery"
-                className="group relative block h-full w-full overflow-hidden rounded-2xl border border-slate-200 bg-deep-ocean shadow-[0_8px_24px_rgba(6,29,50,0.09)] transition-all duration-300 hover:-translate-y-1.5 hover:border-maritime/40 hover:shadow-[0_20px_40px_rgba(6,29,50,0.18)]"
+                className="cmcs-card-light group relative block h-full w-full overflow-hidden"
               >
                 <Image
                   src={g.src}
                   alt={g.alt}
                   fill
                   sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
-                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-linear-to-t from-midnight/85 via-midnight/10 to-transparent opacity-65 transition-opacity duration-300 group-hover:opacity-85" />

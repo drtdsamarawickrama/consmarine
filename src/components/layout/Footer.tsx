@@ -10,7 +10,7 @@ export default function Footer() {
   const popularServices = services.slice(0, 6);
 
   return (
-    <footer className="relative isolate overflow-hidden border-t border-aqua/15 bg-linear-to-b from-midnight to-[#020c17] text-white">
+    <footer className="cmcs-footer relative isolate overflow-hidden border-t border-aqua/15 bg-linear-to-b from-midnight to-[#020c17] text-white">
       {/* Subtle background ambient light */}
       <div
         className="pointer-events-none absolute -top-40 left-1/2 h-96 w-full -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,_rgba(73,197,229,0.08)_0%,_transparent_70%)]"

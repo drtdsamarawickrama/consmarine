@@ -80,7 +80,7 @@ export default function GalleryGrid() {
           >
             <button
               onClick={() => setSelected(i)}
-              className="group relative h-full w-full overflow-hidden rounded-2xl border border-stone-200 bg-white text-left shadow-[0_6px_20px_rgba(6,29,50,0.07)] transition-all duration-300 hover:-translate-y-1.5 hover:border-aqua/50 hover:shadow-[0_20px_40px_rgba(6,29,50,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maritime"
+              className="cmcs-card-light group relative h-full w-full overflow-hidden text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maritime"
               aria-label={`View full size of project image ${i + 1}`}
             >
               <Image
@@ -88,7 +88,7 @@ export default function GalleryGrid() {
                 alt={g.alt}
                 fill
                 sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
-                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
+                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
               {/* Subtle cinematic gradient on hover */}
               <div className="absolute inset-0 bg-linear-to-t from-midnight/85 via-midnight/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

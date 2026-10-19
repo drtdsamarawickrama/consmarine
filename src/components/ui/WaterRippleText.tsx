@@ -5,7 +5,7 @@ type WaterRippleTextProps = {
   accent?: boolean;
 };
 
-/** Water moves INSIDE the lower half of fixed, accessible lettering. */
+/** Animated water-fill text; accent words remain static. */
 export default function WaterRippleText({ text, accent = false }: WaterRippleTextProps) {
   return (
     <span className="cmcs3d-water-text" role="text" aria-label={text}>
@@ -17,7 +17,7 @@ export default function WaterRippleText({ text, accent = false }: WaterRippleTex
         return (
           <span
             key={`word-${index}`}
-            className={`cmcs3d-water-word${accent ? " cmcs3d-water-word--accent" : ""}`}
+            className={`cmcs3d-water-word${accent ? " cmcs3d-water-word--accent cmcs3d-water-word--static" : ""}`}
             data-water={part}
             aria-hidden="true"
             style={{ "--cmcs-wave-delay": `${-index * 0.37}s` } as CSSProperties}

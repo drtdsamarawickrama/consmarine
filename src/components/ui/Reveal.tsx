@@ -14,15 +14,15 @@ type RevealProps = {
 
 const variants: Record<RevealVariant, Variants> = {
   heading: {
-    hidden: { opacity: 0, y: 30, filter: "blur(3px)" },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, filter: "blur(0px)" },
   },
   card: {
-    hidden: { opacity: 0, y: 40, scale: 0.975, rotateX: 3.5 },
-    visible: { opacity: 1, y: 0, scale: 1, rotateX: 0 },
+    hidden: { opacity: 0, y: 20, scale: 0.99 },
+    visible: { opacity: 1, y: 0, scale: 1 },
   },
   image: {
-    hidden: { opacity: 0, y: 34, scale: 0.965 },
+    hidden: { opacity: 0, y: 20, scale: 0.99 },
     visible: { opacity: 1, y: 0, scale: 1 },
   },
   soft: {
@@ -45,13 +45,12 @@ export default function Reveal({
   return (
     <motion.div
       className={`cmcs-reveal-motion ${className}`.trim()}
-      style={variant === "card" ? { transformPerspective: 1200 } : undefined}
       variants={variants[variant]}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1, margin: "0px 0px -5% 0px" }}
       transition={{
-        duration: variant === "card" ? 0.88 : 0.82,
+        duration: variant === "card" ? 0.62 : 0.58,
         delay: Math.max(0, Math.min(delay, 0.32)),
         ease: [0.22, 1, 0.36, 1],
       }}

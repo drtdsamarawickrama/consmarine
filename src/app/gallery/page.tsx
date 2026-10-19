@@ -21,7 +21,7 @@ export default function GalleryPage() {
         breadcrumbs={[{ label: "Gallery" }]}
       />
 
-      <section className="relative isolate py-20 lg:py-28 bg-[#F7F7F4]">
+      <section className="relative isolate bg-[#F7FAFC] py-16 lg:py-20">
         <Container>
           <div className="mb-12 text-center max-w-3xl mx-auto">
             <div className="mb-3 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-maritime">

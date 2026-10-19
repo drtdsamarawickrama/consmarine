@@ -18,7 +18,7 @@ export default function PageBanner({
   breadcrumbs?: { label: string; href?: string }[];
 }) {
   return (
-    <section className="relative isolate flex min-h-[300px] items-center overflow-hidden bg-midnight text-white md:min-h-[380px]">
+    <section className="relative isolate flex min-h-[280px] items-center overflow-hidden bg-[#04182a] text-white md:min-h-[330px]">
       {/* Background Vessel Image with Smooth Zoom */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -30,9 +30,8 @@ export default function PageBanner({
           className="object-cover object-center scale-105 transition-transform duration-1000 ease-out"
         />
         {/* Layered cinematic ocean gradient overlays */}
-        <div className="absolute inset-0 bg-linear-to-r from-midnight via-midnight/85 to-deep-ocean/50" />
-        <div className="absolute inset-0 bg-linear-to-t from-midnight via-transparent to-midnight/60" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_rgba(73,197,229,0.15),_transparent_50%)]" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#04182a]/90 via-[#04182a]/70 to-[#04182a]/25" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#04182a]/65 via-transparent to-[#04182a]/30" />
       </div>
 
       <Container className="relative z-10 py-16 md:py-20">
@@ -40,7 +39,7 @@ export default function PageBanner({
           {/* Breadcrumb Navigation */}
           <nav
             aria-label="Breadcrumb"
-            className="mb-4 flex items-center gap-2 text-xs font-medium text-mist"
+            className="mb-4 flex items-center gap-2 text-xs font-medium text-[#d6e0e8]"
           >
             <Link href="/" className="transition-colors hover:text-aqua">
               Home
@@ -71,8 +70,8 @@ export default function PageBanner({
 
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-3">
-            <span className="h-0.5 w-6 bg-aqua" />
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-aqua-light">
+            <span className="h-0.5 w-6 bg-[#70bfff]" />
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b8dcf2]">
               {eyebrow}
             </p>
           </div>
@@ -84,15 +83,13 @@ export default function PageBanner({
 
           {/* Optional Subtitle */}
           {subtitle && (
-            <p className="mt-4 max-w-2xl text-base text-silver sm:text-lg leading-relaxed">
+            <p className="mt-4 max-w-2xl text-base text-[#e7f0f6] sm:text-lg leading-relaxed">
               {subtitle}
             </p>
           )}
         </Reveal>
       </Container>
 
-      {/* Decorative Bottom Glow Line */}
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-linear-to-r from-transparent via-aqua/30 to-transparent" />
     </section>
   );
 }

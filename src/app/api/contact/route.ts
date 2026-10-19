@@ -50,10 +50,10 @@ export async function POST(request: Request) {
     const host = process.env.SMTP_HOST;
     const user = process.env.SMTP_USER;
     const password = process.env.SMTP_PASSWORD;
-    const from = process.env.SMTP_FROM;
-    const to = process.env.CONTACT_TO;
+    const from = process.env.SMTP_FROM || user;
+    const to = process.env.CONTACT_TO || "info@consmarine.com";
 
-    if (!host || !user || !password || !from || !to) {
+    if (!host || !user || !password) {
       return NextResponse.json(
         {
           error:

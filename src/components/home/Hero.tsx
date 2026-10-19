@@ -3,16 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Clock3,
-  Globe2,
-  Headphones,
-  MapPin,
-  ShieldCheck,
-  Ship,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import WaterRippleText from "@/components/ui/WaterRippleText";
 import "./HeroOcean.css";
 
@@ -46,28 +37,6 @@ const slides: HeroSlide[] = [
     accentLine: "Anywhere.",
     description:
       "Your maritime operations deserve expertise you can trust. Responsive marine surveying and consultancy services, wherever your vessels operate.",
-  },
-];
-
-const credentials = [
-  { icon: Ship, figure: "10+", description: "Years of Experience" },
-  { icon: Clock3, figure: "24/7", description: "Global Availability" },
-  { icon: Globe2, figure: "Worldwide", description: "Marine Solutions" },
-  { icon: ShieldCheck, figure: "Independent", description: "& Impartial" },
-];
-
-const benefits = [
-  {
-    icon: ShieldCheck,
-    title: "Trusted Marine Partner",
-    subtitle: "Independent & Impartial",
-  },
-  { icon: Globe2, title: "Global Coverage", subtitle: "Worldwide Reach" },
-  { icon: MapPin, title: "Strategic Location", subtitle: "Based in Sri Lanka" },
-  {
-    icon: Headphones,
-    title: "Responsive Support",
-    subtitle: "24/7 Availability",
   },
 ];
 
@@ -253,34 +222,6 @@ export default function Hero() {
             </div>
           </div>
 
-          <aside className="cmcs3d-credentials" aria-label="Company strengths">
-            {credentials.map(({ icon: Icon, figure, description }, index) => (
-              <div
-                className="cmcs3d-credential"
-                key={figure}
-                style={{ animationDelay: `${-1.4 * index}s` }}
-              >
-                <div className="cmcs3d-credential-icon">
-                  <Icon size={29} strokeWidth={1.65} aria-hidden="true" />
-                </div>
-                <div>
-                  <strong>{figure}</strong>
-                  <span>{description}</span>
-                </div>
-              </div>
-            ))}
-          </aside>
-        </div>
-        <div className="cmcs3d-trust" aria-label="Why clients choose us">
-          {benefits.map(({ icon: Icon, title, subtitle }) => (
-            <div className="cmcs3d-trust-item" key={title}>
-              <Icon size={35} strokeWidth={1.8} aria-hidden="true" />
-              <div>
-                <strong>{title}</strong>
-                <span>{subtitle}</span>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

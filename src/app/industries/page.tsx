@@ -113,9 +113,9 @@ export default function IndustriesPage() {
         breadcrumbs={[{ label: "Industries" }]}
       />
 
-      <section className="relative isolate py-20 lg:py-28 bg-[#F7F7F4]">
+      <section className="relative isolate bg-[#F7FAFC] py-16 lg:py-20">
         <Container>
-          <Reveal variant="heading" className="mb-16 max-w-3xl">
+          <Reveal variant="heading" className="mb-12 max-w-3xl">
             <div className="mb-3 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-maritime">
               <span className="h-0.5 w-6 rounded-full bg-maritime" />
               Tailored Sector Capabilities
@@ -142,12 +142,12 @@ export default function IndustriesPage() {
                   delay={(index % 3) * 0.075}
                   className="h-full min-w-0"
                 >
-                  <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-stone-200/80 bg-white shadow-[0_6px_24px_rgba(6,29,50,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-aqua/40 hover:shadow-[0_20px_40px_rgba(6,29,50,0.12)]">
+                  <div className="cmcs-card-light group flex h-full flex-col justify-between overflow-hidden p-0 transition-transform duration-300 hover:-translate-y-1">
                     {/* Card body with border and padding */}
-                    <div className="p-7">
+                    <div className="p-6">
                       {/* Header: Icon badge + Title */}
                       <div className="flex items-center gap-4 mb-5">
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-stone-200 bg-[#E8EFF1] text-maritime transition-all duration-300 group-hover:bg-maritime group-hover:text-white group-hover:border-maritime">
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded border border-[#D6E0E8] bg-[#F7FAFC] text-maritime transition-colors duration-300 group-hover:bg-[#E8EEF3]">
                           <Icon size={22} strokeWidth={1.8} />
                         </div>
                         <h3 className="text-base font-bold text-midnight transition-colors leading-snug group-hover:text-maritime">
@@ -179,7 +179,7 @@ export default function IndustriesPage() {
                       </div>
                     </div>
 
-                    <div className="px-7 pb-6 pt-0 border-t border-stone-100 flex items-center justify-between mt-1">
+                    <div className="mt-1 flex items-center justify-between border-t border-[#E8EEF3] px-6 py-4">
                       <Link
                         href="/contact"
                         className="inline-flex items-center gap-1.5 text-xs font-bold text-maritime hover:text-midnight transition-colors group-hover:underline"
