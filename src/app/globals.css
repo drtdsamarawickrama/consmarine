@@ -50,12 +50,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
  h2, h3, h4, h5, h6 {
-  color: #0b1842;
+  color: #09172b;
   font-family: var(--font-manrope), Arial, sans-serif;
   letter-spacing: -.025em;
 }
 h1 {
-  color: #fff;
+  color: #000000;
 }
 ::selection { color: #fff; background: #12476b; }
 button, a { -webkit-tap-highlight-color: transparent; }
