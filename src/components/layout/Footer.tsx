@@ -196,9 +196,9 @@ export default function Footer() {
       <div className="border-t border-aqua/10 bg-[#020a13]">
         <Container className="flex flex-col items-center justify-between gap-3 py-6 text-xs text-mist sm:flex-row">
           <span>
-            © {new Date().getFullYear()} Constellation Marine Consultant
-            Services (Pvt) Ltd. All rights reserved.
-          </span>
+  © 2021–{new Date().getFullYear()} Constellation Marine Consultant
+  Services (Pvt) Ltd. All rights reserved.
+</span>
           <div className="flex items-center gap-4 text-[11px]">
             <span className="flex items-center gap-1.5 text-aqua">
               <ShieldCheck size={14} /> Certified Maritime Surveyors
