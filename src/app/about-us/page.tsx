@@ -52,7 +52,7 @@ export default function AboutPage() {
     <main className="bg-soft-white text-midnight">
       {/* Cinematic Page Banner */}
       <PageBanner
-        title="About Us"
+        title="About Us "
         eyebrow="Our Company"
         subtitle="Trusted Expertise. Global Perspective. Professional Integrity."
         image="/images/hero/cmcs-cinematic-ship-1.webp"
