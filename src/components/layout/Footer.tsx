@@ -168,24 +168,47 @@ export default function Footer() {
                 ports.
               </p>
               <div className="mt-3 flex items-center gap-2">
-                <div className="rounded bg-white p-1">
+                <a
+                  href="https://www.slpa.lk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Visit Sri Lanka Ports Authority (SLPA)"
+                  className="group/logo flex items-center rounded-lg bg-white p-1.5 transition-all hover:ring-2 hover:ring-aqua"
+                >
                   <Image
                     src="/images/credentials/sri-lanka-ports-authority1.jpg"
                     width={55}
                     height={38}
                     alt="Sri Lanka Ports Authority"
-                    className="h-7 w-auto object-contain"
+                    className="h-7 w-auto object-contain transition-transform group-hover/logo:scale-105"
                   />
-                </div>
-                <div className="rounded bg-white p-1">
+                </a>
+                <a
+                  href="https://www.hipg.lk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Visit Hambantota International Port Group"
+                  className="group/logo flex items-center rounded-lg bg-white p-1.5 transition-all hover:ring-2 hover:ring-aqua"
+                >
                   <Image
                     src="/images/credentials/hambantota-port1.png"
                     width={70}
                     height={38}
                     alt="Hambantota International Port"
-                    className="h-7 w-auto object-contain"
+                    className="h-7 w-auto object-contain transition-transform group-hover/logo:scale-105"
                   />
-                </div>
+                </a>
+              </div>
+              <div className="mt-3 pt-2.5 border-t border-aqua/15 flex items-center justify-between">
+                <a
+                  href="https://www.slpa.lk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-medium text-aqua-light hover:text-white transition-colors group/link"
+                >
+                  <span>Sri Lanka Ports Authority (SLPA)</span>
+                  <ArrowUpRight size={12} className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                </a>
               </div>
             </div>
           </div>
