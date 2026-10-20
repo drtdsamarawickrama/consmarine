@@ -163,54 +163,52 @@ export default function Footer() {
               <span className="block text-[11px] font-bold uppercase tracking-wider text-aqua-light">
                 Strategic Port Corridors
               </span>
-              <p className="mt-1 text-xs text-silver leading-relaxed">
-                Operating across Colombo, Hambantota, Galle, and Trincomalee
-                ports.
-              </p>
               <div className="mt-3 flex items-center gap-2">
-                <a
-                  href="https://www.slpa.lk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Visit Sri Lanka Ports Authority (SLPA)"
-                  className="group/logo flex items-center rounded-lg bg-white p-1.5 transition-all hover:ring-2 hover:ring-aqua"
-                >
+                <div className="rounded bg-white p-1">
                   <Image
                     src="/images/credentials/sri-lanka-ports-authority1.jpg"
                     width={55}
                     height={38}
                     alt="Sri Lanka Ports Authority"
-                    className="h-7 w-auto object-contain transition-transform group-hover/logo:scale-105"
+                    className="h-7 w-auto object-contain"
                   />
-                </a>
-                <a
-                  href="https://www.hipg.lk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Visit Hambantota International Port Group"
-                  className="group/logo flex items-center rounded-lg bg-white p-1.5 transition-all hover:ring-2 hover:ring-aqua"
-                >
+                </div>
+                <div className="rounded bg-white p-1">
                   <Image
                     src="/images/credentials/hambantota-port1.png"
                     width={70}
                     height={38}
                     alt="Hambantota International Port"
-                    className="h-7 w-auto object-contain transition-transform group-hover/logo:scale-105"
+                    className="h-7 w-auto object-contain"
                   />
-                </a>
+                </div>
               </div>
-              <div className="mt-3 pt-2.5 border-t border-aqua/15 flex items-center justify-between">
-                <a
-                  href="https://www.slpa.lk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[11px] font-medium text-aqua-light hover:text-white transition-colors group/link"
-                >
-                  <span>Sri Lanka Ports Authority (SLPA)</span>
-                  <ArrowUpRight size={12} className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                </a>
-              </div>
+              <p className="mt-2.5 text-xs text-silver leading-relaxed">
+                Operating across Colombo, Galle, and Trincomalee ports.
+              </p>
             </div>
+
+            {/* Sri Lanka Ports Authority (SLPA) Card */}
+            <a
+              href="https://www.slpa.lk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-4 block rounded-xl border border-aqua/20 bg-deep-ocean/40 p-3 transition-all hover:border-aqua/50 hover:bg-deep-ocean/70"
+            >
+              <div className="rounded-lg bg-white p-2 flex items-center justify-center">
+                <Image
+                  src="/images/credentials/sri-lanka-ports-authority1.jpg"
+                  width={180}
+                  height={60}
+                  className="h-10 w-auto object-contain mx-auto transition-transform duration-300 group-hover:scale-105"
+                  alt="Sri Lanka Ports Authority"
+                />
+              </div>
+              <div className="mt-2.5 flex items-center justify-center gap-1.5 text-center text-[11px] font-semibold text-aqua-light group-hover:text-white transition-colors">
+                <span>Sri Lanka Ports Authority (SLPA)</span>
+                <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </div>
+            </a>
           </div>
         </div>
       </Container>
