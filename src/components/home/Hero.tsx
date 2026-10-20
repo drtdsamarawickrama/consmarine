@@ -194,32 +194,6 @@ export default function Hero() {
                 </Link>
               </div>
             </div>
-            <div
-              className="cmcs3d-progress"
-              role="group"
-              aria-label="Hero slide controls"
-            >
-              <span className="cmcs3d-progress-count">
-                {String(active + 1).padStart(2, "0")} /{" "}
-                {String(slides.length).padStart(2, "0")}
-              </span>
-              <div className="cmcs3d-progress-track">
-                {slides.map((item, index) => (
-                  <button
-                    key={item.image}
-                    aria-label={`Go to hero slide ${index + 1}`}
-                    aria-pressed={index === active}
-                    onClick={() => setActive(index)}
-                    className={
-                      index === active
-                        ? "cmcs3d-progress-segment is-current"
-                        : "cmcs3d-progress-segment"
-                    }
-                    type="button"
-                  />
-                ))}
-              </div>
-            </div>
           </div>
 
         </div>
