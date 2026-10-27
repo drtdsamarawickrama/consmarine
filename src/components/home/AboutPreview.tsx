@@ -24,7 +24,7 @@ export default function AboutPreview() {
                 <Ship size={22} strokeWidth={1.8} />
               </div>
               <div>
-                <strong className="block text-xl font-extrabold leading-tight text-[#071d33]">10+</strong>
+                <strong className="block text-xl font-extrabold leading-tight text-[#071d33]">20+</strong>
                 <span className="text-xs font-medium text-[#52677c]">Years of Marine Surveying</span>
               </div>
             </div>
