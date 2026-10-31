@@ -5,6 +5,12 @@ import { ArrowRight } from "lucide-react";
 
 export default function AboutPreview() {
   return (
+    <section className="relative isolate overflow-hidden bg-[#071d33] text-white">
+      <div className="grid min-h-[460px] lg:grid-cols-2">
+        <div className="flex flex-col justify-center px-6 py-16 sm:px-12 lg:px-20 lg:py-24">
+          <Reveal variant="heading">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[40px] leading-tight max-w-xl">
+              Your Trusted Partner in Marine Consultancy
             </h2>
             <p className="mt-5 text-base leading-relaxed text-[#cbd5e1] max-w-lg font-normal text-justify [text-align-last:left]">
               We are committed to delivering professional, independent and reliable marine consultancy and survey services to meet the evolving needs of our clients worldwide.

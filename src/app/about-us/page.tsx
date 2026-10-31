@@ -227,6 +227,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold text-white group-hover:text-aqua-light transition-colors">
                   Our Vision
                 </h3>
+                <p className="mt-4 text-sm leading-relaxed text-silver text-justify [text-align-last:left]">
                   {vision}
                 </p>
               </div>
@@ -241,6 +242,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold text-white group-hover:text-aqua-light transition-colors">
                   Our Mission
                 </h3>
+                <p className="mt-4 text-sm leading-relaxed text-silver text-justify [text-align-last:left]">
                   {mission}
                 </p>
               </div>
@@ -288,6 +290,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-extrabold tracking-tight text-midnight sm:text-4xl">
                 Guiding with Experience and Vision
               </h2>
+              <div className="mt-8 space-y-5 text-base leading-relaxed text-graphite/85 text-justify [text-align-last:left]">
                 {chairmanMessage.filter(Boolean).map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
