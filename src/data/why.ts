@@ -1,6 +1,6 @@
 export const whyChooseUs = [
   {
-    title: "10+ Years of Experience",
+    title: "20+ Years of Experience",
     description:
       "More than a decade of hands-on marine surveying and inspection experience serving the global shipping industry.",
   },

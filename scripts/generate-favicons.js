@@ -111,3 +111,4 @@ async function buildFavicons() {
 }
 
 buildFavicons().catch(console.error);
+
