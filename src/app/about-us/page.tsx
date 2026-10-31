@@ -113,9 +113,15 @@ export default function AboutPage() {
                 Committed to Excellence in Marine Consultancy
               </h2>
 
-              <div className="mt-6 space-y-4 text-base leading-relaxed text-[#52677c] text-justify [text-align-last:left]">
+              <div className="mt-6 space-y-4 text-base leading-relaxed text-[#52677c]">
                 {aboutParagraphs.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
+                  <p
+                    key={index}
+                    className="text-justify [text-align-last:left]"
+                    style={{ textAlign: "justify", textJustify: "inter-word" }}
+                  >
+                    {paragraph}
+                  </p>
                 ))}
               </div>
 
@@ -227,7 +233,10 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold text-white group-hover:text-aqua-light transition-colors">
                   Our Vision
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-silver text-justify [text-align-last:left]">
+                <p
+                  className="mt-4 text-sm leading-relaxed text-silver text-justify [text-align-last:left]"
+                  style={{ textAlign: "justify", textJustify: "inter-word" }}
+                >
                   {vision}
                 </p>
               </div>
@@ -242,7 +251,10 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold text-white group-hover:text-aqua-light transition-colors">
                   Our Mission
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-silver text-justify [text-align-last:left]">
+                <p
+                  className="mt-4 text-sm leading-relaxed text-silver text-justify [text-align-last:left]"
+                  style={{ textAlign: "justify", textJustify: "inter-word" }}
+                >
                   {mission}
                 </p>
               </div>
