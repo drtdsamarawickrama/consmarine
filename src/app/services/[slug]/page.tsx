@@ -7,9 +7,7 @@ import {
   ArrowUpRight,
   CheckCircle2,
   ShieldCheck,
-  Clock3,
-  FileText,
-  Camera,
+  FileCheck2,
   Compass,
 } from "lucide-react";
 import { services } from "@/data/services";
@@ -30,7 +28,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const s = services.find((s) => s.slug === slug);
   return {
-    title: s?.title ?? "Marine Service",
+    title: s ? `${s.code} – ${s.title}` : "Marine Service",
     description: s?.description,
   };
 }
@@ -49,48 +47,19 @@ export default async function ServiceDetail({
     .filter((item) => item.slug !== s.slug)
     .slice(0, 3);
 
-  const keyDeliverables = [
-    {
-      icon: FileText,
-      title: "Comprehensive Survey Report",
-      desc: "Detailed classification-grade documentation with clear factual analysis.",
-    },
-    {
-      icon: Camera,
-      title: "High-Resolution Photographic Log",
-      desc: "Timestamped inspection photography recording vessel condition.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Independent & Impartial Findings",
-      desc: "Unbiased assessments to protect commercial and legal interests.",
-    },
-    {
-      icon: Clock3,
-      title: "Rapid Preliminary Briefing",
-      desc: "Same-day executive overview followed by complete final report.",
-    },
-  ];
-
-  const surveyScope = [
-    "Comprehensive pre-inspection briefing and scope verification",
-    "Onboard visual and instrumental examination by certified surveyors",
-    "Detailed documentation of findings, measurements, and deviations",
-    "Objective assessment in accordance with international maritime codes",
-    "Executive summary and final survey report delivery",
-  ];
+  const serviceCode = s.code || `CMCS-${String(s.id).padStart(2, "0")}`;
 
   return (
     <main className="bg-soft-white text-midnight">
       {/* Cinematic Page Banner with the specific service's photography */}
       <PageBanner
         title={s.title}
-        eyebrow="Marine Surveying"
+        eyebrow={`${serviceCode} • Marine Capabilities`}
         subtitle="Independent. Accurate. Reliable."
         image={s.image}
         breadcrumbs={[
           { label: "Services", href: "/services" },
-          { label: s.title },
+          { label: serviceCode },
         ]}
       />
 
@@ -120,8 +89,8 @@ export default async function ServiceDetail({
                   sizes="(max-width:1024px) 100vw, 40vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-midnight/60 via-transparent to-transparent" />
-                
+                <div className="absolute inset-0 bg-gradient-to-t from-midnight/65 via-transparent to-transparent" />
+
                 {/* Floating Service Badge */}
                 <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/20 bg-midnight/90 p-3 text-white backdrop-blur-md flex items-center justify-between shadow-md">
                   <span className="text-xs font-bold flex items-center gap-2">
@@ -129,7 +98,7 @@ export default async function ServiceDetail({
                     Certified Marine Inspection
                   </span>
                   <span className="text-[11px] font-mono text-aqua-light">
-                    CMCS-{String(s.id).padStart(2, "0")}
+                    {serviceCode}
                   </span>
                 </div>
               </div>
@@ -165,58 +134,67 @@ export default async function ServiceDetail({
               <div>
                 <div className="mb-3 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-maritime">
                   <span className="h-0.5 w-6 rounded-full bg-maritime" />
-                  Service Scope &amp; Methodology
+                  {serviceCode} • Survey Scope &amp; Deliverables
                 </div>
 
                 <h1 className="text-3xl font-extrabold tracking-tight text-midnight sm:text-4xl lg:text-5xl leading-tight">
                   {s.title}
                 </h1>
 
-                <p className="mt-6 text-base leading-relaxed text-graphite/85 sm:text-lg">
+                <p className="mt-6 text-base leading-relaxed text-graphite/85 sm:text-lg text-justify [text-align-last:left]">
                   {s.description}
                 </p>
               </div>
 
-              {/* What This Survey Covers */}
+              {/* Survey Scope */}
               <div className="cmcs-card-light p-6 sm:p-7">
-                <h3 className="text-lg font-bold text-midnight mb-4">
-                  Our Survey Scope Typically Includes
-                </h3>
+                <div className="mb-4 flex items-center justify-between border-b border-stone-200 pb-3">
+                  <h3 className="text-lg font-bold text-midnight">
+                    Survey Scope
+                  </h3>
+                  <span className="text-xs font-mono font-medium text-maritime">
+                    {s.scope.length} Inspection Items
+                  </span>
+                </div>
                 <div className="space-y-3">
-                  {surveyScope.map((item, idx) => (
+                  {s.scope.map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-maritime/10 text-maritime mt-0.5">
                         <CheckCircle2 size={13} />
                       </div>
-                      <span className="text-sm text-graphite/80">{item}</span>
+                      <span className="text-sm text-graphite/85 leading-relaxed">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Key Deliverables Grid */}
+              {/* Deliverables */}
               <div>
-                <h3 className="text-lg font-bold text-midnight mb-4">
-                  Standard Inspection Deliverables
-                </h3>
+                <div className="mb-4 flex items-center justify-between border-b border-stone-200 pb-3">
+                  <h3 className="text-lg font-bold text-midnight">
+                    Deliverables
+                  </h3>
+                  <span className="text-xs font-mono font-medium text-maritime">
+                    {s.deliverables.length} Documentation Deliverables
+                  </span>
+                </div>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  {keyDeliverables.map((d) => {
-                    const Icon = d.icon;
-                    return (
-                      <div
-                        key={d.title}
-                        className="cmcs-card-light p-4 transition-all duration-300"
-                      >
-                        <div className="flex items-center gap-3 mb-2">
-                          <Icon size={18} className="text-maritime" />
-                          <h4 className="text-xs font-bold text-midnight">{d.title}</h4>
-                        </div>
-                        <p className="text-xs text-graphite/75 leading-relaxed">
-                          {d.desc}
+                  {s.deliverables.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="cmcs-card-light p-4 transition-all duration-300 flex items-start gap-3 bg-white border border-stone-200/90 rounded-xl"
+                    >
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sky-50 text-[#0284c7] mt-0.5">
+                        <FileCheck2 size={17} />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-sm font-bold text-midnight leading-snug">{item}</h4>
+                        <p className="mt-1 text-[11px] text-[#52677c]">
+                          Certified documentation provided upon survey completion.
                         </p>
                       </div>
-                    );
-                  })}
+                    </div>
+                  ))}
                 </div>
               </div>
 

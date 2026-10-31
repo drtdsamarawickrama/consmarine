@@ -20,10 +20,7 @@ export default function GalleryGrid() {
 
   const filteredImages = useMemo(() => {
     if (activeCategory === "all") return gallery;
-    if (activeCategory === "vessel")
-      return gallery.filter((g) => g.id % 2 === 1);
-    if (activeCategory === "port") return gallery.filter((g) => g.id % 2 === 0);
-    return gallery.slice(0, 4);
+    return gallery.filter((g) => g.category === activeCategory);
   }, [activeCategory]);
 
   useEffect(() => {

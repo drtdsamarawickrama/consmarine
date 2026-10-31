@@ -1,7 +1,9 @@
+"use client";
+
 import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import type { MarineService } from "@/data/services";
 
 export default function ServiceCard({
@@ -14,6 +16,7 @@ export default function ServiceCard({
   variant?: "light" | "navy";
 }) {
   const isNavy = variant === "navy" || featured;
+  const serviceCode = service.code || `CMCS-${String(service.id).padStart(2, "0")}`;
 
   return (
     <Reveal
@@ -23,10 +26,10 @@ export default function ServiceCard({
     >
       <Link
         href={`/services/${service.slug}`}
-        className={`cmcs-service-card group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[5px] border transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-1 ${
+        className={`cmcs-service-card group relative flex h-full min-w-0 flex-col overflow-hidden rounded-xl border transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-1 ${
           isNavy
             ? "cmcs-card-dark text-white hover:border-[#70bfff]"
-            : "cmcs-card-light text-midnight"
+            : "cmcs-card-light text-[#071d33]"
         }`}
       >
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#e8eff1]">
@@ -41,63 +44,67 @@ export default function ServiceCard({
             aria-hidden="true"
             className={`absolute inset-0 ${
               isNavy
-                ? "bg-gradient-to-t from-midnight/65 via-transparent to-transparent"
-                : "bg-gradient-to-t from-[#061d32]/20 via-transparent to-transparent"
+                ? "bg-gradient-to-t from-[#071d33]/65 via-transparent to-transparent"
+                : "bg-gradient-to-t from-[#071d33]/25 via-transparent to-transparent"
             }`}
           />
-          <span
-            className={`absolute left-3 top-3 rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.08em] backdrop-blur-md ${
-              isNavy
-                ? "border-white/40 bg-[#071d33]/90 text-white"
-                : "border-white/80 bg-[#071d33]/90 text-white shadow-sm"
-            }`}
-          >
-            Survey
-          </span>
+          <div className="absolute top-3 left-3">
+            <span className="inline-flex items-center rounded-md bg-[#071d33]/85 px-2.5 py-1 font-mono text-[11px] font-bold text-white shadow-xs backdrop-blur-xs border border-white/15">
+              {serviceCode}
+            </span>
+          </div>
         </div>
 
         <div className="flex flex-1 flex-col p-5 sm:p-6">
           <h3
-            className={`text-base font-bold leading-[1.5] transition-colors duration-200 ${
+            className={`text-base font-bold leading-[1.4] transition-colors duration-200 ${
               isNavy
-                ? "text-white group-hover:text-aqua-light"
-                : "text-midnight group-hover:text-maritime"
+                ? "text-white group-hover:text-[#cbd5e1]"
+                : "text-[#071d33] group-hover:text-[#0c3660]"
             }`}
           >
             {service.title}
           </h3>
           <p
-            className={`mt-3 line-clamp-3 text-[13px] leading-[1.7] ${
-              isNavy ? "text-[#bed2de]" : "text-[#536677]"
+            className={`mt-2.5 line-clamp-2 text-[13px] leading-[1.65] ${
+              isNavy ? "text-[#cbd5e1]" : "text-[#52677c]"
             }`}
           >
             {service.description}
           </p>
+
+          {service.scope && service.scope.length > 0 && (
+            <div className="mt-3 flex items-center gap-1.5 text-[11px] font-semibold text-[#0284c7]">
+              <CheckCircle2 size={13} className="shrink-0" />
+              <span>{service.scope.length} Defined Scope Checklist Items</span>
+            </div>
+          )}
+
           <div
-            className={`mt-auto flex items-center justify-between border-t pt-6 ${
-              isNavy ? "border-white/20" : "border-[#d7e0e8]"
+            className={`mt-auto flex items-center justify-between border-t pt-4 ${
+              isNavy ? "border-white/15" : "border-[#f1f5f9]"
             }`}
           >
             <span
               className={`inline-flex items-center gap-1.5 text-xs font-bold transition-colors duration-200 ${
                 isNavy
-                  ? "text-aqua-light group-hover:text-white"
-                  : "text-maritime group-hover:text-[#0a4969]"
+                  ? "text-white/90 group-hover:text-white"
+                  : "text-[#071d33] group-hover:text-[#0c3660]"
               }`}
             >
-              View Details
+              View Scope &amp; Deliverables
               <ArrowUpRight
-                size={15}
+                size={14}
                 aria-hidden="true"
                 className="transition-transform duration-300 motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5"
               />
             </span>
             <span
               className={`font-mono text-[10px] ${
-                isNavy ? "text-[#afc4d1]" : "text-[#7a90a2]"
+                isNavy ? "text-[#94a3b8]" : "text-[#94a3b8]"
               }`}
             >
-              CMCS-{String(service.id).padStart(2, "0")}
+              {serviceCode}
             </span>
           </div>
         </div>

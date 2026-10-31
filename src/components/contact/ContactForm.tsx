@@ -65,12 +65,12 @@ export default function ContactForm() {
             maxLength={120}
             autoComplete="name"
             placeholder="e.g. Capt. James Sterling"
-            className="mt-2 w-full rounded-[5px] border border-[#142b42] bg-white p-3.5 text-sm text-[#10233b] placeholder-[#8293a2] outline-none transition focus:border-[#1686c4] focus:ring-2 focus:ring-[#1686c4]/20"
+            className="mt-2 w-full rounded-lg border border-[#e2e8f0] bg-white p-3.5 text-sm text-[#071d33] placeholder-[#94a3b8] outline-none transition focus:border-[#0284c7] focus:ring-2 focus:ring-[#0284c7]/20"
           />
         </label>
 
         {/* Email */}
-        <label className="text-sm font-semibold text-[#10233b]">
+        <label className="text-sm font-semibold text-[#071d33]">
           Email Address *
           <input
             name="email"
@@ -79,12 +79,12 @@ export default function ContactForm() {
             maxLength={254}
             autoComplete="email"
             placeholder="e.g. james@maritimecorp.com"
-            className="mt-2 w-full rounded-[5px] border border-[#142b42] bg-white p-3.5 text-sm text-[#10233b] placeholder-[#8293a2] outline-none transition focus:border-[#1686c4] focus:ring-2 focus:ring-[#1686c4]/20"
+            className="mt-2 w-full rounded-lg border border-[#e2e8f0] bg-white p-3.5 text-sm text-[#071d33] placeholder-[#94a3b8] outline-none transition focus:border-[#0284c7] focus:ring-2 focus:ring-[#0284c7]/20"
           />
         </label>
 
         {/* Telephone */}
-        <label className="text-sm font-semibold text-[#10233b]">
+        <label className="text-sm font-semibold text-[#071d33]">
           Telephone (with country code)
           <input
             name="phone"
@@ -92,24 +92,24 @@ export default function ContactForm() {
             maxLength={35}
             autoComplete="tel"
             placeholder="e.g. +94 77 123 4567"
-            className="mt-2 w-full rounded-[5px] border border-[#142b42] bg-white p-3.5 text-sm text-[#10233b] placeholder-[#8293a2] outline-none transition focus:border-[#1686c4] focus:ring-2 focus:ring-[#1686c4]/20"
+            className="mt-2 w-full rounded-lg border border-[#e2e8f0] bg-white p-3.5 text-sm text-[#071d33] placeholder-[#94a3b8] outline-none transition focus:border-[#0284c7] focus:ring-2 focus:ring-[#0284c7]/20"
           />
         </label>
 
         {/* Subject */}
-        <label className="text-sm font-semibold text-[#10233b]">
+        <label className="text-sm font-semibold text-[#071d33]">
           Survey Type / Subject *
           <input
             name="subject"
             required
             maxLength={160}
             placeholder="e.g. On-Hire Condition Survey in Colombo"
-            className="mt-2 w-full rounded-[5px] border border-[#142b42] bg-white p-3.5 text-sm text-[#10233b] placeholder-[#8293a2] outline-none transition focus:border-[#1686c4] focus:ring-2 focus:ring-[#1686c4]/20"
+            className="mt-2 w-full rounded-lg border border-[#e2e8f0] bg-white p-3.5 text-sm text-[#071d33] placeholder-[#94a3b8] outline-none transition focus:border-[#0284c7] focus:ring-2 focus:ring-[#0284c7]/20"
           />
         </label>
 
         {/* Message */}
-        <label className="sm:col-span-2 text-sm font-semibold text-[#10233b]">
+        <label className="sm:col-span-2 text-sm font-semibold text-[#071d33]">
           Inspection Details &amp; Vessel Particulars *
           <textarea
             name="message"
@@ -118,7 +118,7 @@ export default function ContactForm() {
             maxLength={5000}
             rows={5}
             placeholder="Please detail your vessel name, IMO number, expected port of call, and required survey date..."
-            className="mt-2 w-full resize-none rounded-[5px] border border-[#142b42] bg-white p-3.5 text-sm text-[#10233b] placeholder-[#8293a2] outline-none transition focus:border-[#1686c4] focus:ring-2 focus:ring-[#1686c4]/20"
+            className="mt-2 w-full resize-none rounded-lg border border-[#e2e8f0] bg-white p-3.5 text-sm text-[#071d33] placeholder-[#94a3b8] outline-none transition focus:border-[#0284c7] focus:ring-2 focus:ring-[#0284c7]/20"
           />
         </label>
 
@@ -135,7 +135,7 @@ export default function ContactForm() {
         <button
           disabled={loading}
           type="submit"
-          className="cmcs-button inline-flex w-full items-center justify-center gap-2 rounded-[5px] bg-[#071d33] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-all hover:bg-[#12476b] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#071d33] px-8 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-xs transition-all hover:bg-[#0284c7] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
           {loading ? (
             <>

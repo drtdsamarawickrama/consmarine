@@ -116,7 +116,7 @@
   max-width: 1000px;
   margin: 0;
   color: #fff;
-  font-family: var(--font-manrope), var(--font-inter), Arial, sans-serif;
+  font-family: var(--font-heading), sans-serif;
   font-size: clamp(42px,5vw,72px);
   font-weight: 800;
   letter-spacing: -.042em;

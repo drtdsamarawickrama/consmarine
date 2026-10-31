@@ -99,14 +99,14 @@ export default function WhyPage() {
                   </span>
                 </h2>
 
-                <p className="mt-6 text-base leading-relaxed text-silver sm:text-lg">
+                <p className="mt-6 text-base leading-relaxed text-silver sm:text-lg text-justify [text-align-last:left]">
                   Positioned in Sri Lanka directly along the world&apos;s
                   busiest maritime East-West corridor, CMCS delivers
                   unrivaled response speeds for commercial fleets traversing the
                   vital Indian Ocean sea lanes.
                 </p>
 
-                <p className="mt-3 text-sm leading-relaxed text-mist">
+                <p className="mt-3 text-sm leading-relaxed text-mist text-justify [text-align-last:left]">
                   Whether your vessel requires emergency damage surveying,
                   rigorous on-hire inspection, precision bunker quantity audits,
                   or routine classification verification, our certified surveyors

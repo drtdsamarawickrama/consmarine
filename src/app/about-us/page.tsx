@@ -20,6 +20,10 @@ import {
   CheckCircle2,
   Award,
   ArrowRight,
+  Clock3,
+  ClipboardCheck,
+  Globe,
+  Headphones,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -89,7 +93,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <strong className="block text-2xl font-extrabold text-white sm:text-3xl">
-                    10+
+                    20+
                   </strong>
                   <span className="text-xs font-semibold text-silver">
                     Years of Marine Surveying
@@ -100,16 +104,16 @@ export default function AboutPage() {
 
             {/* Right: Authentic Company Story */}
             <Reveal variant="heading" delay={0.12}>
-              <div className="mb-4 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-maritime">
-                <span className="h-0.5 w-6 rounded-full bg-maritime" />
+              <div className="mb-4 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-[#0284c7]">
+                <span className="h-0.5 w-6 rounded-full bg-[#0284c7]" />
                 Our Story
               </div>
 
-              <h2 className="text-3xl font-extrabold tracking-tight text-midnight sm:text-4xl lg:text-5xl leading-tight">
-                A Global Marine Consultancy Built on Integrity and Expertise
+              <h2 className="text-3xl font-extrabold tracking-tight text-[#071d33] sm:text-4xl lg:text-5xl leading-tight">
+                Committed to Excellence in Marine Consultancy
               </h2>
 
-              <div className="mt-6 space-y-4 text-base leading-relaxed text-graphite/85">
+              <div className="mt-6 space-y-4 text-base leading-relaxed text-[#52677c] text-justify [text-align-last:left]">
                 {aboutParagraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
@@ -118,18 +122,76 @@ export default function AboutPage() {
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 cmcs-button rounded-[5px] bg-midnight px-6 py-3.5 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-maritime"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#071d33] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-xs transition-all duration-300 hover:bg-[#0284c7]"
                 >
-                  Request a Survey <ArrowRight size={16} />
+                  Request a Survey <ArrowRight size={15} />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center gap-2 cmcs-button rounded-[5px] border border-[#142b42] bg-white px-6 py-3.5 text-sm font-bold text-midnight shadow-xs transition-all duration-300 hover:border-maritime hover:bg-[#e8eef3]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#e2e8f0] bg-white px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#071d33] shadow-xs transition-all duration-300 hover:border-[#0284c7] hover:bg-[#f8fafc]"
                 >
                   Explore Services
                 </Link>
               </div>
             </Reveal>
+          </div>
+
+          {/* Key Metrics / Stats Bar matching UI Mockup */}
+          <div className="mt-16 border-t border-[#e2e8f0] pt-10">
+            <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f0f9ff] text-[#0284c7]">
+                  <Clock3 size={24} strokeWidth={1.8} />
+                </div>
+                <div>
+                  <strong className="block text-2xl font-extrabold text-[#071d33] sm:text-3xl">
+                    20+
+                  </strong>
+                  <span className="text-xs font-semibold text-[#52677c]">
+                    Years of Experience
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f0f9ff] text-[#0284c7]">
+                  <ClipboardCheck size={24} strokeWidth={1.8} />
+                </div>
+                <div>
+                  <strong className="block text-2xl font-extrabold text-[#071d33] sm:text-3xl">
+                    100+
+                  </strong>
+                  <span className="text-xs font-semibold text-[#52677c]">
+                    Projects Completed
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f0f9ff] text-[#0284c7]">
+                  <Globe size={24} strokeWidth={1.8} />
+                </div>
+                <div>
+                  <strong className="block text-2xl font-extrabold text-[#071d33] sm:text-3xl">
+                    Global
+                  </strong>
+                  <span className="text-xs font-semibold text-[#52677c]">
+                    Client Base
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f0f9ff] text-[#0284c7]">
+                  <Headphones size={24} strokeWidth={1.8} />
+                </div>
+                <div>
+                  <strong className="block text-2xl font-extrabold text-[#071d33] sm:text-3xl">
+                    24/7
+                  </strong>
+                  <span className="text-xs font-semibold text-[#52677c]">
+                    Support
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
@@ -165,7 +227,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold text-white group-hover:text-aqua-light transition-colors">
                   Our Vision
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-silver">
+                <p className="mt-4 text-sm leading-relaxed text-silver text-justify [text-align-last:left]">
                   {vision}
                 </p>
               </div>
@@ -180,7 +242,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold text-white group-hover:text-aqua-light transition-colors">
                   Our Mission
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-silver">
+                <p className="mt-4 text-sm leading-relaxed text-silver text-justify [text-align-last:left]">
                   {mission}
                 </p>
               </div>
@@ -228,7 +290,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-extrabold tracking-tight text-midnight sm:text-4xl">
                 Guiding with Experience and Vision
               </h2>
-              <div className="mt-8 space-y-5 text-base leading-relaxed text-graphite/85">
+              <div className="mt-8 space-y-5 text-base leading-relaxed text-graphite/85 text-justify [text-align-last:left]">
                 {chairmanMessage.filter(Boolean).map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}

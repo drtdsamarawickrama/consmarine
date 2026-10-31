@@ -109,7 +109,7 @@ export default function IndustriesPage() {
         title="Industries We Serve"
         eyebrow="Market Sectors"
         subtitle="Supporting a Wide Range of Maritime Sectors Worldwide."
-        image="/images/gallery/g4.jpeg"
+        image="/images/hero/industry-banner.jpg"
         breadcrumbs={[{ label: "Industries" }]}
       />
 
@@ -123,7 +123,7 @@ export default function IndustriesPage() {
             <h2 className="text-3xl font-extrabold tracking-tight text-midnight sm:text-4xl lg:text-5xl leading-tight">
               Specialized Marine Consulting for Every Maritime Stakeholder
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-graphite/85">
+            <p className="mt-4 text-base leading-relaxed text-graphite/85 text-justify [text-align-last:left]">
               Every maritime sector operates under unique commercial pressures,
               regulatory requirements, and risk profiles. At CMCS, we deliver
               customized surveying solutions designed to protect your

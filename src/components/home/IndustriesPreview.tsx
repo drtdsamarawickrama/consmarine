@@ -60,77 +60,46 @@ const sectors = [
 
 export default function IndustriesPreview() {
   return (
-    <section className="relative isolate overflow-hidden border-t border-[#e8eef3] bg-white py-20 text-midnight lg:py-24">
-
+    <section className="relative isolate overflow-hidden border-t border-[#e2e8f0] bg-white py-18 text-[#071d33] lg:py-24">
       <Container className="relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <SectionTitle
             theme="light"
-            eyebrow="Industries We Serve"
-            title="Supporting a Wide Range of Maritime Sectors"
+            eyebrow="Who We Work With"
+            title="Industries We Serve"
             description="We deliver independent marine surveying and consultancy services tailored to the specific risk management and operational requirements of every maritime stakeholder."
           />
           <Link
             href="/industries"
-            className="cmcs-button inline-flex shrink-0 items-center gap-2 self-start border border-[#142b42] bg-white px-5 py-3 text-xs font-bold text-midnight shadow-sm transition-all duration-300 hover:border-maritime hover:bg-midnight hover:text-white hover:shadow-md md:self-auto"
+            className="inline-flex shrink-0 items-center gap-1.5 text-xs font-bold text-[#0284c7] transition-colors duration-200 hover:text-[#0369a1] self-start md:self-auto"
           >
-            Explore All Sectors <ArrowUpRight size={15} className="text-aqua" />
+            Explore All Sectors <ArrowUpRight size={14} />
           </Link>
         </div>
 
-        {/* 6 Refined Architectural Sector Cards */}
-        <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        {/* 6 Clean Mockup Architectural Sector Cards */}
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 lg:gap-5">
           {sectors.map((sector, index) => {
             const Icon = sector.icon;
             return (
               <Reveal
                 key={sector.title}
                 variant="card"
-                delay={(index % 3) * 0.09}
+                delay={index * 0.05}
                 className="h-full min-w-0"
               >
-                <div className="cmcs-card-light group relative flex h-full flex-col overflow-hidden">
-                  {/* Photo Header */}
-                  <div className="relative h-44 w-full overflow-hidden bg-midnight">
-                    <Image
-                      src={sector.image}
-                      alt={sector.title}
-                      fill
-                      sizes="(max-width:768px) 100vw, 33vw"
-                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                    />
-                    {/* Subtle realistic maritime gradient overlay */}
-                    <div className="absolute inset-0 bg-linear-to-t from-midnight/70 via-midnight/20 to-transparent" />
-
-                    {/* Floating Icon badge */}
-                    <div className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-[5px] border border-white/55 bg-[#071d33]/90 text-[#70bfff] transition-colors duration-300 group-hover:bg-white group-hover:text-[#12476b]">
-                      <Icon size={18} strokeWidth={1.8} />
-                    </div>
+                <Link
+                  href="/industries"
+                  className="cmcs-card-light group flex h-full flex-col items-center justify-center rounded-xl p-5 sm:p-6 text-center transition-all duration-300 hover:border-[#071d33] hover:shadow-lg"
+                >
+                  <div className="mb-3.5 flex h-13 w-13 items-center justify-center rounded-xl bg-[#f0f4f8] text-[#071d33] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#071d33] group-hover:text-white">
+                    <Icon size={24} strokeWidth={1.8} />
                   </div>
 
-                  {/* Card Content Body */}
-                  <div className="flex flex-1 flex-col justify-between p-5">
-                    <div>
-                      <h3 className="text-lg font-bold text-midnight transition-colors duration-200 group-hover:text-maritime">
-                        {sector.title}
-                      </h3>
-
-                      <p className="mt-2 text-sm leading-relaxed text-[#52677c] font-normal">
-                        {sector.description}
-                      </p>
-                    </div>
-
-                    <div className="mt-5 flex items-center justify-between border-t border-[#d7e0e8] pt-4 text-xs font-bold text-maritime transition-colors group-hover:text-[#1686c4]">
-                      <span className="group-hover:underline">
-                        Sector Solutions
-                      </span>
-                      <ArrowUpRight
-                        size={15}
-                        className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                      />
-                    </div>
-                  </div>
-                </div>
+                  <h3 className="text-[14px] sm:text-[15px] font-bold text-[#071d33] transition-colors group-hover:text-[#0c3660] leading-snug">
+                    {sector.title}
+                  </h3>
+                </Link>
               </Reveal>
             );
           })}

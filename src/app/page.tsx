@@ -4,7 +4,7 @@ import ServicesPreview from "@/components/home/ServicesPreview";
 import AboutPreview from "@/components/home/AboutPreview";
 import IndustriesPreview from "@/components/home/IndustriesPreview";
 import GalleryPreview from "@/components/home/GalleryPreview";
-import ContactCTA from "@/components/home/ContactCTA";
+
 export default function Home() {
   return (
     <main>
@@ -14,7 +14,6 @@ export default function Home() {
       <AboutPreview />
       <IndustriesPreview />
       <GalleryPreview />
-      <ContactCTA />
     </main>
   );
 }

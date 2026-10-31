@@ -86,13 +86,13 @@ export default function Navbar() {
                 aria-current={isActive ? "page" : undefined}
                 className={`relative py-2 text-[13.5px] font-bold tracking-wide transition-colors ${
                   isActive
-                    ? "text-[#12476b]"
-                    : "text-[#52677c] hover:text-[#071d33]"
+                    ? "text-[#0284c7]"
+                    : "text-[#475569] hover:text-[#071d33]"
                 }`}
               >
                 {n.title}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#1686c4]" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2.5px] rounded-full bg-[#0284c7]" />
                 )}
               </Link>
             );
@@ -102,21 +102,21 @@ export default function Navbar() {
         {/* Premium Deep Navy CTA Button */}
         <Link
           href="/contact"
-          className="ml-auto hidden shrink-0 items-center gap-2 rounded-[5px] bg-[#071d33] px-5 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_12px_rgba(7,29,51,0.16)] transition-all duration-300 hover:bg-[#12476b] sm:inline-flex xl:ml-0"
+          className="ml-auto hidden shrink-0 items-center gap-2 rounded-full bg-[#071d33] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all duration-300 hover:bg-[#0284c7] sm:inline-flex xl:ml-0"
         >
-          Request a Survey <ArrowUpRight size={15} className="text-aqua" />
+          Request a Survey <ArrowUpRight size={15} className="text-[#70bfff]" />
         </Link>
 
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-[5px] border border-[#142b42] bg-white text-midnight shadow-sm transition hover:bg-[#f7fafc] xl:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#e2e8f0] bg-white text-[#071d33] shadow-xs transition hover:bg-[#f8fafc] xl:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
@@ -125,7 +125,7 @@ export default function Navbar() {
         <nav
           id="mobile-nav"
           aria-label="Mobile navigation"
-          className="absolute left-0 right-0 top-full max-h-[calc(100dvh-74px)] overflow-y-auto border-t border-[#e8eef3] bg-white p-6 shadow-[0_12px_24px_rgba(7,29,51,0.12)] xl:hidden"
+          className="absolute left-0 right-0 top-full max-h-[calc(100dvh-74px)] overflow-y-auto border-t border-[#e2e8f0] bg-white p-6 shadow-[0_12px_24px_rgba(7,29,51,0.12)] xl:hidden"
         >
           <div className="mx-auto flex max-w-[1500px] flex-col gap-2">
             {navigation.map((n) => {
@@ -135,15 +135,15 @@ export default function Navbar() {
                   key={n.href}
                   href={n.href}
                   onClick={() => setOpen(false)}
-                  className={`flex items-center justify-between rounded-[5px] px-4 py-3.5 text-sm font-bold transition ${
+                  className={`flex items-center justify-between rounded-lg px-4 py-3.5 text-sm font-bold transition ${
                     isActive
-                      ? "bg-stone-light/60 text-maritime"
-                      : "text-graphite hover:bg-stone-light/40 hover:text-midnight"
+                      ? "bg-[#f0f9ff] text-[#0284c7]"
+                      : "text-[#475569] hover:bg-[#f8fafc] hover:text-[#071d33]"
                   }`}
                 >
                   {n.title}
                   {isActive && (
-                    <span className="h-2 w-2 rounded-full bg-maritime shadow-[0_0_8px_#155c80]" />
+                    <span className="h-2 w-2 rounded-full bg-[#0284c7]" />
                   )}
                 </Link>
               );
@@ -151,9 +151,9 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-4 flex items-center justify-center gap-2 rounded-[5px] bg-midnight px-5 py-3.5 text-center text-sm font-bold uppercase tracking-wider text-white shadow-md transition hover:bg-deep-ocean sm:hidden"
+              className="mt-4 flex items-center justify-center gap-2 rounded-full bg-[#071d33] px-5 py-3.5 text-center text-sm font-bold uppercase tracking-wider text-white shadow-md transition hover:bg-[#0284c7] sm:hidden"
             >
-              Request a Survey <ArrowUpRight size={17} className="text-aqua" />
+              Request a Survey <ArrowUpRight size={17} className="text-[#70bfff]" />
             </Link>
           </div>
         </nav>

@@ -22,31 +22,31 @@ export default function SectionTitle({
         className={`mb-10 md:mb-14 ${isCenter ? "text-center mx-auto max-w-3xl" : "max-w-3xl"}`}
       >
         <div
-          className={`mb-3.5 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] ${
-            isLight ? "text-maritime" : "text-aqua-light"
+          className={`mb-3 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] ${
+            isLight ? "text-[#0284c7]" : "text-[#70bfff]"
           } ${isCenter ? "justify-center" : ""}`}
         >
           <span
-            className={`h-0.5 w-6 rounded-full ${isLight ? "bg-maritime" : "bg-aqua"}`}
+            className={`h-0.5 w-5 rounded-full ${isLight ? "bg-[#0284c7]" : "bg-[#70bfff]"}`}
           />
           {eyebrow}
           {isCenter && (
             <span
-              className={`h-0.5 w-6 rounded-full ${isLight ? "bg-maritime" : "bg-aqua"}`}
+              className={`h-0.5 w-5 rounded-full ${isLight ? "bg-[#0284c7]" : "bg-[#70bfff]"}`}
             />
           )}
         </div>
         <h2
-          className={`text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[42px] leading-tight text-balance ${
-            isLight ? "text-midnight" : "text-white"
+          className={`text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[40px] leading-tight text-balance ${
+            isLight ? "text-[#071d33]" : "text-white"
           }`}
         >
           {title}
         </h2>
         {description && (
           <p
-            className={`mt-4 text-base leading-relaxed ${
-              isLight ? "text-slate-600" : "text-silver"
+            className={`mt-3.5 text-base leading-relaxed ${
+              isLight ? "text-[#52677c]" : "text-[#cbd5e1]"
             } ${isCenter ? "mx-auto max-w-2xl" : "max-w-2xl"}`}
           >
             {description}
