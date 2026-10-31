@@ -48,11 +48,6 @@ export default function ServiceCard({
                 : "bg-gradient-to-t from-[#071d33]/25 via-transparent to-transparent"
             }`}
           />
-          <div className="absolute top-3 left-3">
-            <span className="inline-flex items-center rounded-md bg-[#071d33]/85 px-2.5 py-1 font-mono text-[11px] font-bold text-white shadow-xs backdrop-blur-xs border border-white/15">
-              {serviceCode}
-            </span>
-          </div>
         </div>
 
         <div className="flex flex-1 flex-col p-5 sm:p-6">
